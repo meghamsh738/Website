@@ -28,6 +28,7 @@
         <li><a href="#about"        class="nav__link">About</a></li>
         <li><a href="#research"     class="nav__link">Research</a></li>
         <li><a href="#projects"     class="nav__link">Projects</a></li>
+        <li><a href="#interactive"  class="nav__link">Live Lab</a></li>
         <li><a href="#skills"       class="nav__link">Skills</a></li>
         <li><a href="#publications" class="nav__link">Publications</a></li>
         <li><a href="#contact"      class="nav__link nav__link--cta">Contact</a></li>
@@ -89,8 +90,7 @@
             </p>
             <p>
               Beyond the bench, I'm passionate about <strong>coding</strong>, automation, and bringing
-              AI-driven approaches to biological research. I also have a deep interest in
-              mechanical engineering and enjoy blending analytical thinking with creative problem-solving.
+              AI-driven approaches to biological research.
             </p>
             <div class="about__interests">
               <span class="tag">Neuroinflammation</span>
@@ -103,7 +103,7 @@
           <div class="about__stats reveal">
             <div class="stat-card">
               <div class="stat-card__icon" aria-hidden="true">🧠</div>
-              <div class="stat-card__number">2+</div>
+              <div class="stat-card__number">5+</div>
               <div class="stat-card__label">Years Research Experience</div>
             </div>
             <div class="stat-card">
@@ -308,33 +308,38 @@
             </div>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-card__header">
-              <span class="project-card__category">Mechanical Engineering</span>
-              <div class="project-card__links">
-                <a href="https://github.com/meghamsh738" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
-                  <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2.9-.3 1.9-.4 2.9-.4 1 0 2 .1 2.9.4 2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.2 21.4 23.5 17.1 23.5 12 23.5 5.7 18.3.5 12 .5z"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-card__title">Bio-inspired Robotics Designs</h3>
-            <p class="project-card__desc">
-              CAD models and prototypes inspired by biological structures, exploring how nature's
-              engineering principles (from cellular mechanics to neural architectures) can inform
-              next-generation robotic systems.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">CAD</span>
-              <span class="tag tag--sm">3D Printing</span>
-              <span class="tag tag--sm">Mech. Eng.</span>
-            </div>
-          </article>
-
         </div>
         <div class="projects__cta reveal">
           <a href="https://github.com/meghamsh738" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
             See all projects on GitHub →
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Interactive Microglia Lab ─────────────────────────────────── -->
+    <section class="section interactive-lab" id="interactive">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Interactive</span>
+          <h2 class="section__title">Microglial Dynamics — Live</h2>
+        </div>
+        <p class="interactive-lab__desc reveal">
+          Microglia are the brain's resident immune cells and key players in delirium. Move your cursor
+          across the canvas to trigger their surveillance response — processes extend toward signals of
+          distress. Click anywhere to release an inflammatory signal and watch nearby cells activate,
+          mimicking the neuroimmune cascade that drives acute cognitive dysfunction.
+        </p>
+        <div class="interactive-lab__canvas-wrap reveal">
+          <canvas id="microgliaCanvas" class="interactive-lab__canvas" aria-label="Interactive microglia simulation. Use arrow keys to move cursor, Space or Enter to release an inflammatory signal."></canvas>
+          <div class="interactive-lab__legend" aria-hidden="true">
+            <span class="legend-item legend-item--homeostatic">Homeostatic</span>
+            <span class="legend-item legend-item--surveilling">Surveilling</span>
+            <span class="legend-item legend-item--activated">Activated</span>
+          </div>
+          <p class="interactive-lab__hint" aria-hidden="true">
+            🖱️ Move cursor to survey · Click to release inflammatory signal
+          </p>
         </div>
       </div>
     </section>
@@ -434,20 +439,6 @@
             </ul>
           </div>
 
-          <div class="skills__group reveal">
-            <h3 class="skills__group-title">
-              <span class="skills__group-icon" aria-hidden="true">⚙️</span>Other Interests
-            </h3>
-            <ul class="lab-skills" role="list">
-              <li class="lab-skill">Mechanical Engineering Design</li>
-              <li class="lab-skill">CAD Modelling</li>
-              <li class="lab-skill">AI / ML in Biology</li>
-              <li class="lab-skill">Scientific Writing</li>
-              <li class="lab-skill">Data Visualisation</li>
-              <li class="lab-skill">Open-Source Science</li>
-            </ul>
-          </div>
-
         </div>
       </div>
     </section>
@@ -505,7 +496,7 @@
           <div class="contact__intro reveal">
             <p>
               I'm always happy to discuss research ideas, collaboration opportunities,
-              or just chat about neuroimmunology, coding, or mechanical engineering.
+              or just chat about neuroimmunology or coding.
               Reach out through any of the channels below.
             </p>
           </div>
