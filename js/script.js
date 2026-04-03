@@ -118,7 +118,6 @@ if (roleEl) {
   let roleIdx = 0;
   let charIdx = 0;
   let deleting = false;
-  let pauseTicks = 0;
 
   function typeRole() {
     const current = roles[roleIdx];
@@ -128,13 +127,12 @@ if (roleEl) {
       charIdx++;
       if (charIdx === current.length) {
         deleting = true;
-        pauseTicks = 28; // hold before deleting
-        setTimeout(typeRole, 50 * pauseTicks);
+        setTimeout(typeRole, 1400); // hold before deleting
         return;
       }
       setTimeout(typeRole, 65);
     } else {
-      roleEl.textContent = current.slice(0, charIdx - 1);
+      roleEl.textContent = current.slice(0, charIdx);
       charIdx--;
       if (charIdx === 0) {
         deleting = false;

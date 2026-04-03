@@ -164,8 +164,9 @@ ul { list-style: none; }
   transition: background var(--transition), backdrop-filter var(--transition), box-shadow var(--transition);
 }
 .nav.scrolled {
-  background: rgba(13, 10, 20, 0.85);
+  background: rgba(13, 10, 20, 0.92);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 var(--clr-border);
 }
 .nav__container {
@@ -712,7 +713,6 @@ ul { list-style: none; }
   .projects__grid { grid-template-columns: 1fr; }
   .skills__grid { grid-template-columns: 1fr; }
   .contact__grid { grid-template-columns: 1fr; }
-  .break-desktop { display: none; }
 }
 
 /* ══════════════════════════════════════════════════════════════════
@@ -731,6 +731,7 @@ ul { list-style: none; }
     align-items: center;
     background: rgba(13, 10, 20, 0.97);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     gap: 1rem;
     opacity: 0;
     pointer-events: none;
