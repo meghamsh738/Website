@@ -341,8 +341,126 @@
             🖱️ Move cursor to survey · Click to release inflammatory signal
           </p>
         </div>
+
+        <!-- Play Game CTA -->
+        <div class="game-cta reveal">
+          <div class="game-cta__card">
+            <div class="game-cta__icon" aria-hidden="true">🎮</div>
+            <div class="game-cta__content">
+              <h3 class="game-cta__title">Microglia vs. Delirium</h3>
+              <p class="game-cta__desc">
+                Play an educational game based on my research.
+                Direct microglia to phagocytose dead cells before neuroinflammation
+                overwhelms the brain — based on work presented at the
+                <em>Trinity Biomedical Sciences Institute Postgraduate Symposium 2024</em>.
+              </p>
+              <div class="game-cta__badges">
+                <span class="tag tag--sm">Phagocytosis</span>
+                <span class="tag tag--sm">Neuroinflammation</span>
+                <span class="tag tag--sm">Delirium Model</span>
+              </div>
+            </div>
+            <button id="openGameBtn" class="btn btn--primary game-cta__btn" aria-haspopup="dialog">
+              Play Game →
+            </button>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- ─── Microglia Game Modal ───────────────────────────────────────── -->
+    <div id="microgliaGameModal" class="game-modal" role="dialog" aria-modal="true" aria-label="Microglia Phagocytosis Game" style="display:none;">
+      <div class="game-modal__inner">
+        <button class="game-modal__close" id="gameCloseBtn" aria-label="Close game">✕</button>
+
+        <!-- Canvas (always present, rendered behind screens) -->
+        <canvas id="gameCanvas" class="game-canvas" aria-label="Microglia phagocytosis game canvas"></canvas>
+
+        <!-- ── Start / Menu screen ── -->
+        <div id="gameStartScreen" class="game-screen game-screen--menu">
+          <div class="game-screen__content">
+            <div class="game-screen__icon" aria-hidden="true">🧠</div>
+            <h2 class="game-screen__title">Microglia vs. Delirium</h2>
+            <p class="game-screen__subtitle">
+              Direct your microglia to phagocytose dead cells before neuroinflammation reaches critical levels.
+            </p>
+            <div class="game-fact-box" aria-live="polite">
+              <span class="game-fact-box__label">Did you know?</span>
+              <p id="gameFact" class="game-fact-box__text"></p>
+            </div>
+            <p class="game-screen__label">Select difficulty:</p>
+            <div class="game-diff-btns">
+              <button class="game-diff-btn" data-difficulty="recovery">
+                <span class="game-diff-btn__name">Recovery</span>
+                <span class="game-diff-btn__desc">Slow debris · 3 NPC helpers</span>
+              </button>
+              <button class="game-diff-btn active" data-difficulty="mild">
+                <span class="game-diff-btn__name">Mild Delirium</span>
+                <span class="game-diff-btn__desc">Moderate debris · 2 NPC helpers</span>
+              </button>
+              <button class="game-diff-btn" data-difficulty="moderate">
+                <span class="game-diff-btn__name">Moderate Delirium</span>
+                <span class="game-diff-btn__desc">Fast debris · 1 NPC helper</span>
+              </button>
+            </div>
+            <p class="game-screen__controls">
+              🖱️ Click to move · Arrow keys / WASD · P to pause
+            </p>
+          </div>
+        </div>
+
+        <!-- ── HUD (visible during play) ── -->
+        <div id="gameHud" class="game-hud" style="display:none;" aria-live="polite" aria-atomic="true">
+          <div class="game-hud__left">
+            <span class="game-hud__label">Score</span>
+            <span class="game-hud__value" id="gameScore">0</span>
+          </div>
+          <div class="game-hud__center">
+            <span class="game-hud__label">Neuroinflammation</span>
+            <div class="game-hud__meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Neuroinflammation level">
+              <div class="game-hud__meter-fill" id="inflammationFill"></div>
+            </div>
+            <span class="game-hud__infl-label" id="inflammationLabel">Low</span>
+          </div>
+          <div class="game-hud__right">
+            <span class="game-hud__label">Time</span>
+            <span class="game-hud__value" id="gameTimer">00:00</span>
+            <button id="gamePauseBtn" class="game-hud__pause" aria-label="Pause game">⏸</button>
+          </div>
+        </div>
+
+        <!-- ── Pause screen ── -->
+        <div id="gamePauseScreen" class="game-screen game-screen--pause" style="display:none;">
+          <div class="game-screen__content">
+            <div class="game-screen__icon" aria-hidden="true">⏸</div>
+            <h2 class="game-screen__title">Paused</h2>
+            <button id="gameResumeBtn" class="btn btn--primary">Resume →</button>
+          </div>
+        </div>
+
+        <!-- ── Game Over screen ── -->
+        <div id="gameOverScreen" class="game-screen game-screen--over" style="display:none;">
+          <div class="game-screen__content">
+            <div class="game-screen__icon" aria-hidden="true">🔬</div>
+            <h2 class="game-screen__title">Game Over</h2>
+            <p class="game-screen__score-label">Phagocytosis Score</p>
+            <p class="game-screen__score" id="finalScore">0</p>
+            <p class="game-screen__msg" id="finalMsg"></p>
+            <div class="game-fact-box">
+              <span class="game-fact-box__label">Research Insight</span>
+              <p id="gameFactOver" class="game-fact-box__text"></p>
+            </div>
+            <p class="game-screen__research">
+              Based on:<br>
+              <em>"Glial reactivity and cognitive dysfunction in a model of systemic inflammation-driven delirium"</em><br>
+              <strong>Meghamsh Teja, Colm Cunningham</strong> — Trinity Biomedical Sciences Institute, 2024
+            </p>
+            <button id="gameRestartBtn" class="btn btn--primary">Play Again →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
     <!-- ─── Skills ─────────────────────────────────────────────────────── -->
     <section class="section skills" id="skills">
@@ -553,5 +671,6 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script src="js/game.js"></script>
 </body>
 </html>
