@@ -1,676 +1,189 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Meghamsh Teja – PhD student at Trinity College Dublin studying neuroimmunology, delirium, and microglial dynamics." />
-  <meta name="keywords" content="neuroimmunology, microglia, single-cell RNA-seq, Trinity College Dublin, NCBS Bangalore, PhD, delirium" />
-  <meta name="author" content="Meghamsh Teja" />
-  <meta property="og:title" content="Meghamsh Teja | Neuroimmunology PhD" />
-  <meta property="og:description" content="PhD student at Trinity College Dublin exploring glial biology, delirium, and microglial dynamics." />
-  <meta property="og:type" content="website" />
-  <title>Meghamsh Teja | Neuroimmunology PhD</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Meghamsh Teja Konda is a PhD researcher in neuroimmunology at Trinity College Dublin, working across brain inflammation, ageing and research software." />
+    <meta name="author" content="Meghamsh Teja Konda" />
+    <meta name="theme-color" content="#0b1017" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Meghamsh Teja Konda — Neuroimmunology &amp; software" />
+    <meta property="og:description" content="Research on neuroinflammation and ageing, alongside practical software for science and play." />
+    <meta property="og:url" content="https://meghamsh738.github.io/Website/" />
+    <meta property="og:image" content="https://meghamsh738.github.io/Website/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Meghamsh Teja Konda — PhD researcher in neuroimmunology at Trinity College Dublin" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:alt" content="Meghamsh Teja Konda — PhD researcher in neuroimmunology at Trinity College Dublin" />
+    <link rel="canonical" href="https://meghamsh738.github.io/Website/" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Meghamsh Teja Konda — Neuroimmunology &amp; software</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ─── Navigation ─────────────────────────────────────────────────── -->
-  <nav class="nav" id="navbar" aria-label="Main navigation">
-    <div class="nav__container">
-      <a href="#home" class="nav__logo" aria-label="Home">MT</a>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links" id="navLinks" role="list">
-        <li><a href="#about"        class="nav__link">About</a></li>
-        <li><a href="#research"     class="nav__link">Research</a></li>
-        <li><a href="#projects"     class="nav__link">Projects</a></li>
-        <li><a href="#interactive"  class="nav__link">Live Lab</a></li>
-        <li><a href="#skills"       class="nav__link">Skills</a></li>
-        <li><a href="#publications" class="nav__link">Publications</a></li>
-        <li><a href="#contact"      class="nav__link nav__link--cta">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <main>
-
-    <!-- ─── Hero ───────────────────────────────────────────────────────── -->
-    <section class="hero" id="home" aria-label="Introduction">
-      <canvas class="hero__canvas" id="neuralCanvas" aria-hidden="true"></canvas>
-      <div class="hero__content">
-        <p class="hero__greeting reveal">Hello, I'm</p>
-        <h1 class="hero__name reveal">Meghamsh<br /><span class="hero__name--accent">Teja</span></h1>
-        <div class="hero__roles reveal">
-          <span class="hero__role-static">PhD Student • </span>
-          <span class="hero__role-dynamic" id="roleDynamic" aria-live="polite">Neuroimmunologist</span>
-        </div>
-        <p class="hero__tagline reveal">
-          Exploring glial biology, microglial dynamics, and the molecular mechanisms
-          of neuroinflammation at <span class="highlight">Trinity College Dublin</span>.
-        </p>
-        <div class="hero__cta reveal">
-          <a href="#research" class="btn btn--primary">View My Research</a>
-          <a href="#contact"  class="btn btn--outline">Get in Touch</a>
-        </div>
-        <div class="hero__affiliations reveal">
-          <span class="affil">Trinity College Dublin</span>
-          <span class="affil-sep">·</span>
-          <span class="affil">NCBS Bangalore</span>
-        </div>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="#home" aria-label="Meghamsh Teja Konda, home">MK<span>.</span></a>
+        <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+          <span class="menu-toggle__label">Menu</span>
+          <span class="menu-toggle__icon" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          <a href="#research">Research</a>
+          <a href="#projects">Software</a>
+          <a href="#publication">Publication</a>
+          <a href="#about">About</a>
+          <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+        </nav>
       </div>
-      <div class="hero__scroll-hint" aria-hidden="true">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="hero section-wrap" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Neuroimmunology <span aria-hidden="true">×</span> software</p>
+          <h1 id="hero-title">Meghamsh<br /><span>Teja Konda</span></h1>
+          <p class="hero-role">PhD researcher in neuroimmunology at Trinity College Dublin.</p>
+          <p class="hero-intro">I study how systemic inflammation shapes brain function and recovery in ageing, and build practical software for research workflows.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#research">Explore my research <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="#projects">Browse selected software <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-links" aria-label="Professional links">
+            <a href="https://github.com/meghamsh738" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <span aria-hidden="true">/</span>
+            <a href="https://www.tcd.ie/neuroscience/" target="_blank" rel="noopener noreferrer">Trinity College Dublin <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit orbit-three"></div>
+          <span class="node node-center"></span>
+          <span class="node node-a"></span>
+          <span class="node node-b"></span>
+          <span class="node node-c"></span>
+          <span class="node node-d"></span>
+          <span class="node node-e"></span>
+          <span class="art-label art-label-top">SIGNAL</span>
+          <span class="art-label art-label-bottom">RESPONSE</span>
+          <div class="art-note"><span class="art-note-line"></span><span>Systems, cells<br />&amp; behaviour</span></div>
+        </div>
+        <a class="hero-scroll" href="#research"><span class="scroll-line" aria-hidden="true"></span>Scroll to explore</a>
+      </section>
+
+      <section class="research section-wrap" id="research" aria-labelledby="research-title">
+        <div class="section-heading">
+          <p class="eyebrow">01 / Research</p>
+          <h2 id="research-title">Inflammation, the brain<br />and <em>recovery.</em></h2>
+        </div>
+        <div class="research-body">
+          <p class="lead">My current research asks how systemic TNF-α-driven inflammation relates to delirium vulnerability in ageing, and how recovery dynamics may be modulated by IL-17A.</p>
+          <p>This research focus is listed in the Trinity College Institute of Neuroscience’s 2026 Neuroscience Research Day programme. My work sits at the intersection of neuroimmunology, ageing and brain network function.</p>
+          <a class="text-link" href="https://www.tcd.ie/Neuroscience/assets/PDF/Neuroscience%20Research%20Day%202026%20-%20Programme.pdf" target="_blank" rel="noopener noreferrer">Read the TCD programme <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="publication feature-band" id="publication" aria-labelledby="publication-title">
+        <div class="publication-mark" aria-hidden="true"><span>01</span><span>PEER-REVIEWED</span></div>
+        <div class="publication-content">
+          <p class="eyebrow">Selected publication <span class="publication-date">14 July 2026</span></p>
+          <h2 id="publication-title">CSF1R inhibition exacerbates gamma oscillation disruption and induces network hyperexcitability in APP/PS1 mice</h2>
+          <p class="publication-meta"><em>Brain</em> · Meghamsh Konda, fifth of 11 authors · DOI: 10.1093/brain/awag147</p>
+          <a class="button button-light" href="https://doi.org/10.1093/brain/awag147" target="_blank" rel="noopener noreferrer">View the article <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="publication-side" aria-hidden="true">
+          <div class="wave wave-one"></div>
+          <div class="wave wave-two"></div>
+          <div class="wave wave-three"></div>
+          <span class="wave-pin"></span>
+          <span class="wave-label">NETWORK<br />DYNAMICS</span>
+        </div>
+      </section>
+
+      <section class="projects section-wrap" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading section-heading-row">
+          <div>
+            <p class="eyebrow">02 / Selected work</p>
+            <h2 id="projects-title">Useful tools.<br /><em>Curious builds.</em></h2>
+          </div>
+          <p class="section-aside">A selection of research, workflow and game projects. Where a safe, version-matched screen is unavailable, the status note says so; a screenshot alone never stands in for a feature or deployment check.</p>
+        </div>
+        <p class="sr-only" id="project-status" role="status" aria-live="polite">Loading selected projects…</p>
+        <div class="project-grid" id="project-grid" aria-busy="true">
+          <p class="project-loading">Loading selected project screens…</p>
+        </div>
+        <noscript><p class="project-fallback">Project cards need JavaScript. You can browse the public repositories on <a href="https://github.com/meghamsh738">GitHub</a>.</p></noscript>
+        <div class="projects-footer"><a class="text-link" href="https://github.com/meghamsh738?tab=repositories" target="_blank" rel="noopener noreferrer">Browse public repositories <span aria-hidden="true">↗</span></a></div>
+      </section>
+
+      <section class="about section-wrap" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="eyebrow">03 / About</p>
+          <h2 id="about-title">Researcher by training.<br /><em>Builder by curiosity.</em></h2>
+        </div>
+        <div class="about-content">
+          <div class="about-copy">
+            <p class="lead">I work in neuroimmunology at Trinity College Dublin, with earlier research experience at the National Centre for Biological Sciences in Bengaluru.</p>
+        <p>Before my current research, I worked as a Junior Research Fellow in Hiyaa Ghosh’s group at NCBS from 2021, studying microglial responses to injury. I hold an MSc in Biochemistry from the Central University of Kerala (2019–2021) and a BSc in Biochemistry from Hindi Mahavidyalaya (2016–2019).</p>
+          </div>
+          <div class="about-facts">
+            <article class="fact-card">
+              <p class="fact-label">Research</p>
+              <h3>Brain–immune interactions</h3>
+              <p>Ageing, systemic inflammation, microglia and neuronal network function.</p>
+            </article>
+            <article class="fact-card">
+              <p class="fact-label">Education</p>
+              <h3>Biochemistry</h3>
+              <p>MSc · Central University of Kerala<br />BSc · Hindi Mahavidyalaya</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="methods section-wrap" id="methods" aria-labelledby="methods-title">
+        <div class="section-heading section-heading-row">
+          <div>
+            <p class="eyebrow">04 / Methods &amp; tools</p>
+            <h2 id="methods-title">A practical<br /><em>toolkit.</em></h2>
+          </div>
+          <p class="section-aside">Techniques and software drawn from my research background and project work. The list describes experience, not a proficiency ranking.</p>
+        </div>
+        <div class="methods-grid">
+          <article class="method-card"><h3>Experimental</h3><p>Mouse handling · stereotaxic surgery · microdissection · behavioural assays · colony work</p></article>
+          <article class="method-card"><h3>Cell &amp; imaging</h3><p>Flow cytometry · immunofluorescence · confocal microscopy · cell culture · Cre-loxP lineage tracing</p></article>
+          <article class="method-card"><h3>Molecular</h3><p>qPCR · PCR · RNA and protein extraction · Western blotting · primer design</p></article>
+          <article class="method-card"><h3>Analysis &amp; software</h3><p>Python · R · ImageJ/Fiji · Imaris · FlowJo · Leica LAS X · GraphPad Prism · AnyMaze</p></article>
+        </div>
+      </section>
+
+      <section class="contact section-wrap" id="contact" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <p class="eyebrow">05 / Contact</p>
+          <h2 id="contact-title">Have a question<br />or an idea?</h2>
+          <p>For research and software conversations, get in touch or find me on GitHub.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:meghamshteja555@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://github.com/meghamsh738" target="_blank" rel="noopener noreferrer">GitHub profile <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="wordmark" href="#home" aria-label="Back to top">MK<span>.</span></a>
+        <p>Meghamsh Teja Konda · Trinity College Dublin</p>
+        <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Site terms</a><a href="https://github.com/meghamsh738" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><span>© <span id="year">2026</span></span></div>
       </div>
-    </section>
+    </footer>
 
-    <!-- ─── About ──────────────────────────────────────────────────────── -->
-    <section class="section about" id="about">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__tag">About Me</span>
-          <h2 class="section__title">The mind behind the microscope</h2>
-        </div>
-        <div class="about__grid">
-          <div class="about__text reveal">
-            <p>
-              I'm a PhD student in <strong>Colm Cunningham's Lab</strong> at Trinity College Dublin,
-              where I investigate the mechanisms underlying <strong>delirium</strong> — a debilitating
-              acute neurological syndrome associated with systemic illness — through the lens of
-              neuroimmunology and glial biology.
-            </p>
-            <p>
-              Before joining TCD, I was a Junior Research Fellow in <strong>Hiyaa Ghosh's Lab</strong>
-              at NCBS Bangalore, where I worked on microglial dynamics and fate in injury response
-              using single-cell transcriptomics and advanced imaging techniques.
-            </p>
-            <p>
-              Beyond the bench, I'm passionate about <strong>coding</strong>, automation, and bringing
-              AI-driven approaches to biological research.
-            </p>
-            <div class="about__interests">
-              <span class="tag">Neuroinflammation</span>
-              <span class="tag">scRNA-seq</span>
-              <span class="tag">AI in Biology</span>
-              <span class="tag">Automation</span>
-              <span class="tag">Coding</span>
-            </div>
-          </div>
-          <div class="about__stats reveal">
-            <div class="stat-card">
-              <div class="stat-card__icon" aria-hidden="true">🧠</div>
-              <div class="stat-card__number">5+</div>
-              <div class="stat-card__label">Years Research Experience</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-card__icon" aria-hidden="true">🔬</div>
-              <div class="stat-card__number">2</div>
-              <div class="stat-card__label">Research Labs</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-card__icon" aria-hidden="true">💻</div>
-              <div class="stat-card__number">5+</div>
-              <div class="stat-card__label">Programming Languages & Tools</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-card__icon" aria-hidden="true">🌍</div>
-              <div class="stat-card__number">2</div>
-              <div class="stat-card__label">Countries</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── Research ───────────────────────────────────────────────────── -->
-    <section class="section research" id="research">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__tag">Research</span>
-          <h2 class="section__title">Investigating the brain's immune guardians</h2>
-        </div>
-
-        <!-- Current -->
-        <div class="research__current reveal">
-          <div class="research__badge">Current Position</div>
-          <div class="research__card research__card--featured">
-            <div class="research__card-header">
-              <div>
-                <h3>PhD Researcher — Delirium & Neuroinflammation</h3>
-                <p class="research__lab">Colm Cunningham Lab · Trinity College Dublin</p>
-              </div>
-              <span class="research__status">Ongoing</span>
-            </div>
-            <p class="research__desc">
-              Investigating the neuroimmunological underpinnings of delirium in the context of
-              systemic inflammation and surgery. My work focuses on how peripheral immune signals
-              propagate to the brain, perturb glial homeostasis, and drive acute cognitive
-              dysfunction in vulnerable populations.
-            </p>
-            <div class="research__highlights">
-              <div class="research__highlight">
-                <span class="research__highlight-icon" aria-hidden="true">⚡</span>
-                <span>Glial cell activation in systemic illness</span>
-              </div>
-              <div class="research__highlight">
-                <span class="research__highlight-icon" aria-hidden="true">⚡</span>
-                <span>Molecular mechanisms of acute CNS dysfunction</span>
-              </div>
-              <div class="research__highlight">
-                <span class="research__highlight-icon" aria-hidden="true">⚡</span>
-                <span>Neuroimmune communication pathways</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Past -->
-        <div class="research__past">
-          <div class="research__badge research__badge--past reveal">Previous Position</div>
-          <div class="research__card reveal">
-            <div class="research__card-header">
-              <div>
-                <h3>Junior Research Fellow — Microglial Dynamics</h3>
-                <p class="research__lab">Hiyaa Ghosh Lab · NCBS Bangalore</p>
-              </div>
-              <span class="research__status research__status--past">Completed</span>
-            </div>
-            <p class="research__desc">
-              Explored microglial fate and phenotypic plasticity following CNS injury using
-              single-cell RNA sequencing and advanced imaging modalities. Contributed to
-              understanding how microglia transition between homeostatic and reactive states
-              and the transcriptional programs governing these transitions.
-            </p>
-            <div class="research__highlights">
-              <div class="research__highlight">
-                <span class="research__highlight-icon" aria-hidden="true">⚡</span>
-                <span>Single-cell transcriptomics of microglia</span>
-              </div>
-              <div class="research__highlight">
-                <span class="research__highlight-icon" aria-hidden="true">⚡</span>
-                <span>Microglial fate mapping post-injury</span>
-              </div>
-              <div class="research__highlight">
-                <span class="research__highlight-icon" aria-hidden="true">⚡</span>
-                <span>Flow cytometry & immunofluorescence imaging</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Research focus cards -->
-        <div class="research__focus reveal">
-          <h3 class="research__focus-title">Research Interests</h3>
-          <div class="research__focus-grid">
-            <div class="focus-card">
-              <div class="focus-card__icon" aria-hidden="true">🦠</div>
-              <h4>Glial Biology</h4>
-              <p>Disease progression, homeostasis maintenance, and reactive state transitions in microglia and astrocytes.</p>
-            </div>
-            <div class="focus-card">
-              <div class="focus-card__icon" aria-hidden="true">🧬</div>
-              <h4>Single-Cell Genomics</h4>
-              <p>scRNA-seq pipelines to decode transcriptional heterogeneity and cell state dynamics in the CNS.</p>
-            </div>
-            <div class="focus-card">
-              <div class="focus-card__icon" aria-hidden="true">🔥</div>
-              <h4>Neuroinflammation</h4>
-              <p>How peripheral immune signals disrupt CNS homeostasis and contribute to neurological disorders.</p>
-            </div>
-            <div class="focus-card">
-              <div class="focus-card__icon" aria-hidden="true">🤖</div>
-              <h4>Computational Biology</h4>
-              <p>Python and R-based pipelines for multimodal data integration and biological insight extraction.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── Projects ───────────────────────────────────────────────────── -->
-    <section class="section projects" id="projects">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__tag">Projects</span>
-          <h2 class="section__title">Code meets curiosity</h2>
-        </div>
-        <div class="projects__grid">
-
-          <article class="project-card reveal">
-            <div class="project-card__header">
-              <span class="project-card__category">Bioinformatics</span>
-              <div class="project-card__links">
-                <a href="https://github.com/meghamsh738" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
-                  <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2.9-.3 1.9-.4 2.9-.4 1 0 2 .1 2.9.4 2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.2 21.4 23.5 17.1 23.5 12 23.5 5.7 18.3.5 12 .5z"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-card__title">scRNA-seq Analysis Pipeline</h3>
-            <p class="project-card__desc">
-              A reproducible Python/R pipeline for processing and analysing single-cell RNA sequencing
-              data from CNS tissue. Includes quality control, dimensionality reduction, clustering,
-              and differential expression modules.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">Python</span>
-              <span class="tag tag--sm">R</span>
-              <span class="tag tag--sm">Seurat</span>
-              <span class="tag tag--sm">Scanpy</span>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-card__header">
-              <span class="project-card__category">Automation</span>
-              <div class="project-card__links">
-                <a href="https://github.com/meghamsh738" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
-                  <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2.9-.3 1.9-.4 2.9-.4 1 0 2 .1 2.9.4 2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.2 21.4 23.5 17.1 23.5 12 23.5 5.7 18.3.5 12 .5z"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-card__title">Lab Workflow Automation</h3>
-            <p class="project-card__desc">
-              Selenium-based automation scripts for streamlining repetitive lab data-entry and
-              literature-curation workflows. Reduces manual effort and minimises human error
-              in high-throughput data management tasks.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">Python</span>
-              <span class="tag tag--sm">Selenium</span>
-              <span class="tag tag--sm">Bash</span>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-card__header">
-              <span class="project-card__category">Data Analysis</span>
-              <div class="project-card__links">
-                <a href="https://github.com/meghamsh738" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
-                  <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2.9-.3 1.9-.4 2.9-.4 1 0 2 .1 2.9.4 2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.2 21.4 23.5 17.1 23.5 12 23.5 5.7 18.3.5 12 .5z"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-card__title">Flow Cytometry Data Visualiser</h3>
-            <p class="project-card__desc">
-              An R Shiny / Python Dash tool for interactive visualisation and statistical analysis
-              of flow cytometry datasets, enabling rapid exploration of immune cell population
-              dynamics from experimental data.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">R</span>
-              <span class="tag tag--sm">Python</span>
-              <span class="tag tag--sm">Dash</span>
-              <span class="tag tag--sm">FlowJO</span>
-            </div>
-          </article>
-
-        </div>
-        <div class="projects__cta reveal">
-          <a href="https://github.com/meghamsh738" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
-            See all projects on GitHub →
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── Interactive Microglia Lab ─────────────────────────────────── -->
-    <section class="section interactive-lab" id="interactive">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__tag">Interactive</span>
-          <h2 class="section__title">Microglial Dynamics — Live</h2>
-        </div>
-        <p class="interactive-lab__desc reveal">
-          Microglia are the brain's resident immune cells and key players in delirium. Move your cursor
-          across the canvas to trigger their surveillance response — processes extend toward signals of
-          distress. Click anywhere to release an inflammatory signal and watch nearby cells activate,
-          mimicking the neuroimmune cascade that drives acute cognitive dysfunction.
-        </p>
-        <div class="interactive-lab__canvas-wrap reveal">
-          <canvas id="microgliaCanvas" class="interactive-lab__canvas" aria-label="Interactive microglia simulation. Use arrow keys to move cursor, Space or Enter to release an inflammatory signal."></canvas>
-          <div class="interactive-lab__legend" aria-hidden="true">
-            <span class="legend-item legend-item--homeostatic">Homeostatic</span>
-            <span class="legend-item legend-item--surveilling">Surveilling</span>
-            <span class="legend-item legend-item--activated">Activated</span>
-          </div>
-          <p class="interactive-lab__hint" aria-hidden="true">
-            🖱️ Move cursor to survey · Click to release inflammatory signal
-          </p>
-        </div>
-
-        <!-- Play Game CTA -->
-        <div class="game-cta reveal">
-          <div class="game-cta__card">
-            <div class="game-cta__icon" aria-hidden="true">🎮</div>
-            <div class="game-cta__content">
-              <h3 class="game-cta__title">Microglia vs. Delirium</h3>
-              <p class="game-cta__desc">
-                Play an educational game based on my research.
-                Direct microglia to phagocytose dead cells before neuroinflammation
-                overwhelms the brain — based on work presented at the
-                <em>Trinity Biomedical Sciences Institute Postgraduate Symposium 2024</em>.
-              </p>
-              <div class="game-cta__badges">
-                <span class="tag tag--sm">Phagocytosis</span>
-                <span class="tag tag--sm">Neuroinflammation</span>
-                <span class="tag tag--sm">Delirium Model</span>
-              </div>
-            </div>
-            <button id="openGameBtn" class="btn btn--primary game-cta__btn" aria-haspopup="dialog">
-              Play Game →
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── Microglia Game Modal ───────────────────────────────────────── -->
-    <div id="microgliaGameModal" class="game-modal" role="dialog" aria-modal="true" aria-label="Microglia Phagocytosis Game" style="display:none;">
-      <div class="game-modal__inner">
-        <button class="game-modal__close" id="gameCloseBtn" aria-label="Close game">✕</button>
-
-        <!-- Canvas (always present, rendered behind screens) -->
-        <canvas id="gameCanvas" class="game-canvas" aria-label="Microglia phagocytosis game canvas"></canvas>
-
-        <!-- ── Start / Menu screen ── -->
-        <div id="gameStartScreen" class="game-screen game-screen--menu">
-          <div class="game-screen__content">
-            <div class="game-screen__icon" aria-hidden="true">🧠</div>
-            <h2 class="game-screen__title">Microglia vs. Delirium</h2>
-            <p class="game-screen__subtitle">
-              Direct your microglia to phagocytose dead cells before neuroinflammation reaches critical levels.
-            </p>
-            <div class="game-fact-box" aria-live="polite">
-              <span class="game-fact-box__label">Did you know?</span>
-              <p id="gameFact" class="game-fact-box__text"></p>
-            </div>
-            <p class="game-screen__label">Select difficulty:</p>
-            <div class="game-diff-btns">
-              <button class="game-diff-btn" data-difficulty="recovery">
-                <span class="game-diff-btn__name">Recovery</span>
-                <span class="game-diff-btn__desc">Slow debris · 3 NPC helpers</span>
-              </button>
-              <button class="game-diff-btn active" data-difficulty="mild">
-                <span class="game-diff-btn__name">Mild Delirium</span>
-                <span class="game-diff-btn__desc">Moderate debris · 2 NPC helpers</span>
-              </button>
-              <button class="game-diff-btn" data-difficulty="moderate">
-                <span class="game-diff-btn__name">Moderate Delirium</span>
-                <span class="game-diff-btn__desc">Fast debris · 1 NPC helper</span>
-              </button>
-            </div>
-            <p class="game-screen__controls">
-              🖱️ Click to move · Arrow keys / WASD · P to pause
-            </p>
-          </div>
-        </div>
-
-        <!-- ── HUD (visible during play) ── -->
-        <div id="gameHud" class="game-hud" style="display:none;" aria-live="polite" aria-atomic="true">
-          <div class="game-hud__left">
-            <span class="game-hud__label">Score</span>
-            <span class="game-hud__value" id="gameScore">0</span>
-          </div>
-          <div class="game-hud__center">
-            <span class="game-hud__label">Neuroinflammation</span>
-            <div class="game-hud__meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Neuroinflammation level">
-              <div class="game-hud__meter-fill" id="inflammationFill"></div>
-            </div>
-            <span class="game-hud__infl-label" id="inflammationLabel">Low</span>
-          </div>
-          <div class="game-hud__right">
-            <span class="game-hud__label">Time</span>
-            <span class="game-hud__value" id="gameTimer">00:00</span>
-            <button id="gamePauseBtn" class="game-hud__pause" aria-label="Pause game">⏸</button>
-          </div>
-        </div>
-
-        <!-- ── Pause screen ── -->
-        <div id="gamePauseScreen" class="game-screen game-screen--pause" style="display:none;">
-          <div class="game-screen__content">
-            <div class="game-screen__icon" aria-hidden="true">⏸</div>
-            <h2 class="game-screen__title">Paused</h2>
-            <button id="gameResumeBtn" class="btn btn--primary">Resume →</button>
-          </div>
-        </div>
-
-        <!-- ── Game Over screen ── -->
-        <div id="gameOverScreen" class="game-screen game-screen--over" style="display:none;">
-          <div class="game-screen__content">
-            <div class="game-screen__icon" aria-hidden="true">🔬</div>
-            <h2 class="game-screen__title">Game Over</h2>
-            <p class="game-screen__score-label">Phagocytosis Score</p>
-            <p class="game-screen__score" id="finalScore">0</p>
-            <p class="game-screen__msg" id="finalMsg"></p>
-            <div class="game-fact-box">
-              <span class="game-fact-box__label">Research Insight</span>
-              <p id="gameFactOver" class="game-fact-box__text"></p>
-            </div>
-            <p class="game-screen__research">
-              Based on:<br>
-              <em>"Glial reactivity and cognitive dysfunction in a model of systemic inflammation-driven delirium"</em><br>
-              <strong>Meghamsh Teja, Colm Cunningham</strong> — Trinity Biomedical Sciences Institute, 2024
-            </p>
-            <button id="gameRestartBtn" class="btn btn--primary">Play Again →</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ─── Skills ─────────────────────────────────────────────────────── -->
-    <section class="section skills" id="skills">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__tag">Skills</span>
-          <h2 class="section__title">Tools & expertise</h2>
-        </div>
-        <div class="skills__grid">
-
-          <div class="skills__group reveal">
-            <h3 class="skills__group-title">
-              <span class="skills__group-icon" aria-hidden="true">💻</span>Programming
-            </h3>
-            <div class="skill-list">
-              <div class="skill-item">
-                <span class="skill-item__name">Python</span>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                  <div class="skill-item__fill" style="--fill: 90%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span class="skill-item__name">R</span>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                  <div class="skill-item__fill" style="--fill: 85%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span class="skill-item__name">Bash / Shell</span>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                  <div class="skill-item__fill" style="--fill: 75%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span class="skill-item__name">Selenium</span>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                  <div class="skill-item__fill" style="--fill: 70%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="skills__group reveal">
-            <h3 class="skills__group-title">
-              <span class="skills__group-icon" aria-hidden="true">🧬</span>Bioinformatics
-            </h3>
-            <div class="skill-list">
-              <div class="skill-item">
-                <span class="skill-item__name">ImageJ / FIJI</span>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
-                  <div class="skill-item__fill" style="--fill: 88%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span class="skill-item__name">Imaris</span>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                  <div class="skill-item__fill" style="--fill: 80%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span class="skill-item__name">FlowJO</span>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                  <div class="skill-item__fill" style="--fill: 85%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span class="skill-item__name">GraphPad Prism</span>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                  <div class="skill-item__fill" style="--fill: 90%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span class="skill-item__name">LasX</span>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                  <div class="skill-item__fill" style="--fill: 75%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="skills__group reveal">
-            <h3 class="skills__group-title">
-              <span class="skills__group-icon" aria-hidden="true">🔬</span>Lab Techniques
-            </h3>
-            <ul class="lab-skills" role="list">
-              <li class="lab-skill">Stereotaxic Surgery</li>
-              <li class="lab-skill">Single-Cell RNA-Seq (scRNA-seq)</li>
-              <li class="lab-skill">Flow Cytometry</li>
-              <li class="lab-skill">Immunofluorescence Staining</li>
-              <li class="lab-skill">Confocal Microscopy</li>
-              <li class="lab-skill">Tissue Sectioning & Histology</li>
-              <li class="lab-skill">Cell Culture</li>
-              <li class="lab-skill">Western Blotting</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── Publications ───────────────────────────────────────────────── -->
-    <section class="section publications" id="publications">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__tag">Publications</span>
-          <h2 class="section__title">Research outputs</h2>
-        </div>
-        <div class="publications__list">
-
-          <article class="pub-card reveal">
-            <div class="pub-card__meta">
-              <span class="pub-card__type">Conference Presentation</span>
-              <span class="pub-card__year">2023</span>
-            </div>
-            <h3 class="pub-card__title">
-              Microglial transcriptional heterogeneity following traumatic CNS injury: a single-cell perspective
-            </h3>
-            <p class="pub-card__authors">Meghamsh Teja, <em>et al.</em></p>
-            <p class="pub-card__venue">NCBS Bangalore Annual Research Symposium</p>
-          </article>
-
-          <article class="pub-card reveal">
-            <div class="pub-card__meta">
-              <span class="pub-card__type">Poster Presentation</span>
-              <span class="pub-card__year">2024</span>
-            </div>
-            <h3 class="pub-card__title">
-              Glial reactivity and cognitive dysfunction in a model of systemic inflammation-driven delirium
-            </h3>
-            <p class="pub-card__authors">Meghamsh Teja, Colm Cunningham</p>
-            <p class="pub-card__venue">Trinity Biomedical Sciences Institute Postgraduate Symposium</p>
-          </article>
-
-        </div>
-        <p class="publications__note reveal">
-          More publications and pre-prints coming soon.
-          Follow me on <a href="https://twitter.com/MeghamshTeja" target="_blank" rel="noopener noreferrer">Twitter</a>
-          for updates.
-        </p>
-      </div>
-    </section>
-
-    <!-- ─── Contact ────────────────────────────────────────────────────── -->
-    <section class="section contact" id="contact">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__tag">Contact</span>
-          <h2 class="section__title">Let's talk science</h2>
-        </div>
-        <div class="contact__grid">
-          <div class="contact__intro reveal">
-            <p>
-              I'm always happy to discuss research ideas, collaboration opportunities,
-              or just chat about neuroimmunology or coding.
-              Reach out through any of the channels below.
-            </p>
-          </div>
-          <div class="contact__links reveal">
-            <a href="mailto:meghamshteja555@gmail.com" class="contact-link">
-              <span class="contact-link__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-              </span>
-              <div>
-                <span class="contact-link__label">Email</span>
-                <span class="contact-link__value">meghamshteja555@gmail.com</span>
-              </div>
-            </a>
-            <a href="tel:+918885645927" class="contact-link">
-              <span class="contact-link__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-              </span>
-              <div>
-                <span class="contact-link__label">Phone</span>
-                <span class="contact-link__value">+91 8885645927</span>
-              </div>
-            </a>
-            <a href="https://github.com/meghamsh738" target="_blank" rel="noopener noreferrer" class="contact-link">
-              <span class="contact-link__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2.9-.3 1.9-.4 2.9-.4 1 0 2 .1 2.9.4 2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.2 21.4 23.5 17.1 23.5 12 23.5 5.7 18.3.5 12 .5z"/></svg>
-              </span>
-              <div>
-                <span class="contact-link__label">GitHub</span>
-                <span class="contact-link__value">@meghamsh738</span>
-              </div>
-            </a>
-            <a href="https://twitter.com/MeghamshTeja" target="_blank" rel="noopener noreferrer" class="contact-link">
-              <span class="contact-link__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </span>
-              <div>
-                <span class="contact-link__label">Twitter / X</span>
-                <span class="contact-link__value">@MeghamshTeja</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ─── Footer ─────────────────────────────────────────────────────── -->
-  <footer class="footer">
-    <div class="container">
-      <p>Designed &amp; built by <strong>Meghamsh Teja</strong> · Trinity College Dublin</p>
-      <p class="footer__copy">© <span id="year"></span> · All rights reserved</p>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
-  <script src="js/game.js"></script>
-</body>
+    <script src="js/script.js" defer></script>
+  </body>
 </html>

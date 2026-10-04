@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-10-04",
+  "projects": [
+    {
+      "slug": "atlasalign",
+      "name": "AtlasAlign",
+      "category": "Image analysis",
+      "status": "In progress · acceptance and export pending",
+      "summary": "A Fiji workflow for atlas-guided tissue alignment and ROI drawing. A recorded native checkpoint reached the Interior editor, but did not accept an alignment, create ROIs or export results.",
+      "statusDetail": "The October 2 checkpoint showed a locked outer border and 24 Interior points on each side. It still reported needs acceptance and 0 ROIs. The captured section is real tissue, and the installed plugin build does not match the current checkout, so a data-safe, version-matched gallery image is pending.",
+      "noScreenshotNote": "A data-safe, version-matched capture is pending; the available review image remains unaccepted.",
+      "profileOrder": 1,
+      "profileHref": "https://github.com/meghamsh738/atlasalign",
+      "profileStatus": "In progress · native acceptance, ROI and export steps pending",
+      "profileLinks": [
+        {
+          "label": "View repository",
+          "href": "https://github.com/meghamsh738/atlasalign"
+        }
+      ],
+      "links": [
+        {
+          "label": "View repository",
+          "href": "https://github.com/meghamsh738/atlasalign"
+        }
+      ]
+    },
+    {
+      "slug": "easy-lab-suite",
+      "name": "EasyLab Suite",
+      "category": "Research workflow tools",
+      "status": "Version 0.2.0 review build · source branch unmerged",
+      "summary": "An eight-module lab workspace for qPCR planning and analysis, cDNA setup, ELISA, colony workflows, Y-maze schedules and a Lab Notebook entry point.",
+      "statusDetail": "The screenshots identify an installed 0.2.0 review build. The Oct 2 capture set includes synthetic overview, qPCR, cDNA and ELISA screens plus a 390 px launcher preview. Pairing, Breeding and Y-maze images are older bundled examples from Dec 28, 2025. The latest GitHub check found codex/suite-ui-refresh at b390d9e, six commits ahead of main and unmerged. This portfolio update did not reopen the app; Notebook sign-in, editing and Drive sync remain unverified.",
+      "profileOrder": 2,
+      "profileHref": "https://github.com/meghamsh738/EasyLab-suite",
+      "profileStatus": "Review build · v0.2.0; source branch six commits ahead of main",
+      "profileScreenshotIndex": 0,
+      "profileLinks": [
+        {
+          "label": "View repository",
+          "href": "https://github.com/meghamsh738/EasyLab-suite"
+        }
+      ],
+      "screenshots": [
+        {
+          "path": "assets/project-images/easy-lab-suite/launcher.webp",
+          "alt": "EasyLab Suite version 0.2.0 launcher listing its eight lab workflow tools.",
+          "caption": "Suite overview · version 0.2.0 · 2 October 2026"
+        },
+        {
+          "path": "assets/project-images/easy-lab-suite/qpcr-planner.webp",
+          "alt": "Synthetic qPCR Planner sample labels, gene chemistry and plate-layout controls.",
+          "caption": "qPCR Planner inputs · synthetic example · 2 October 2026"
+        },
+        {
+          "path": "assets/project-images/easy-lab-suite/cdna-output.webp",
+          "alt": "cDNA calculator with synthetic sample concentrations and calculated output volumes.",
+          "caption": "cDNA output table · synthetic example · 2 October 2026"
+        },
+        {
+          "path": "assets/project-images/easy-lab-suite/elisa-layout.webp",
+          "alt": "ELISA Analysis example with synthetic standards, blanks and sample wells on a 96-well plate.",
+          "caption": "ELISA plate layout · synthetic example · 2 October 2026"
+        },
+        {
+          "path": "assets/project-images/easy-lab-suite/launcher-narrow.webp",
+          "alt": "EasyLab Suite launcher at a 390 pixel viewport width.",
+          "caption": "Narrow launcher layout · 390 px · not a mobile app claim"
+        },
+        {
+          "path": "assets/project-images/easy-lab-suite/pairing-historical.webp",
+          "alt": "Historical bundled Animal Pairing example with synthetic animal IDs and sample group assignments.",
+          "caption": "Animal Pairing · historical bundled example · 28 December 2025"
+        },
+        {
+          "path": "assets/project-images/easy-lab-suite/breeding-historical.webp",
+          "alt": "Historical bundled Mice Breeding Pair Selector example with sample breeders and genotype results.",
+          "caption": "Breeding Pair Selector · historical bundled example · 28 December 2025"
+        },
+        {
+          "path": "assets/project-images/easy-lab-suite/ymaze-historical.webp",
+          "alt": "Historical bundled Y-maze Randomizer example with a synthetic five-day schedule.",
+          "caption": "Y-maze Randomizer · historical bundled example · 28 December 2025"
+        }
+      ],
+      "links": [
+        {
+          "label": "View repository",
+          "href": "https://github.com/meghamsh738/EasyLab-suite"
+        }
+      ]
+    },
+    {
+      "slug": "mouse-colony-manager",
+      "name": "Mouse Colony Manager",
+      "category": "Lab operations",
+      "status": "M16-based prototype · synthetic cage create/reload checked; M17 paused",
+      "summary": "A Next.js and Prisma app for cage-first colony operations and animal-first research workflows. The gallery shows an isolated synthetic local prototype.",
+      "statusDetail": "The demo ran from codex/empty-colony at abdbbdb, with the checkout's pre-existing dirty recovery changes present (23 modified and 11 untracked paths); this portfolio run made no source edits. The local runtime applied all 42 checked-in migrations to a fresh disposable PostgreSQL 16 database. Its dashboard, Animals and Cages screens used synthetic records. One empty cage was created and remained after a fresh Cages page load: A101/R1/006, barcode CM-A101-R1-006, Active, 0/6. No animals were moved, and no console errors were recorded. This is not a pristine M16 build or a release claim. M17 remains paused and its recovery worktree was preserved.",
+      "profileOrder": 3,
+      "profileHref": "https://github.com/meghamsh738/Mouse-colony-manager",
+      "profileStatus": "Local M16-based synthetic cage create/reload checked; release and M17 pending",
+      "profileScreenshotIndex": 3,
+      "profileLinks": [
+        {
+          "label": "View repository",
+          "href": "https://github.com/meghamsh738/Mouse-colony-manager"
+        }
+      ],
+      "screenshots": [
+        {
+          "path": "assets/project-images/mouse-colony-manager/dashboard.webp",
+          "alt": "Mouse Colony Manager facility dashboard with synthetic demo animals, alerts and work queues.",
+          "caption": "Facility dashboard · synthetic M16 demo · 4 October 2026"
+        },
+        {
+          "path": "assets/project-images/mouse-colony-manager/animals.webp",
+          "alt": "Animals table in the Mouse Colony Manager synthetic M16 demo.",
+          "caption": "Animal records · synthetic M16 demo · 4 October 2026"
+        },
+        {
+          "path": "assets/project-images/mouse-colony-manager/cages.webp",
+          "alt": "Cages table before creating an empty synthetic cage in the Mouse Colony Manager M16 demo.",
+          "caption": "Cage list before the create check · synthetic M16 demo"
+        },
+        {
+          "path": "assets/project-images/mouse-colony-manager/cage-after-reload.webp",
+          "alt": "Cages table after a fresh page load, showing synthetic cage A101/R1/006 as active and empty at 0 of 6 occupants.",
+          "caption": "Created empty cage after fresh page load · synthetic M16 demo · 4 October 2026"
+        }
+      ],
+      "links": [
+        {
+          "label": "View repository",
+          "href": "https://github.com/meghamsh738/Mouse-colony-manager"
+        }
+      ]
+    },
+    {
+      "slug": "aoe2-ai-workshop",
+      "name": "Adaptive AI Workshop",
+      "category": "Game design tool",
+      "status": "Experimental · public GitHub Pages demo live; native game behavior unverified",
+      "summary": "A visual editor for building and adapting Age of Empires II strategy plans, with controls for responses and placement policies.",
+      "statusDetail": "PR #1 merged as a5e9bb7 and the public Pages demo is live at the project URL; anonymous HTTP check returned 200. The editor's native game behavior remains unverified: AoE II was not launched and no custom AI file was loaded. The five gallery images document the reviewed editor interface, not in-game results.",
+      "profileOrder": 5,
+      "profileHref": "https://meghamsh738.github.io/Aoe2-AI-editor/",
+      "profileStatus": "Experimental · public Pages demo live; native game behavior unverified",
+      "profileLinks": [
+        {
+          "label": "Open live editor",
+          "href": "https://meghamsh738.github.io/Aoe2-AI-editor/"
+        },
+        {
+          "label": "View repository",
+          "href": "https://github.com/meghamsh738/Aoe2-AI-editor"
+        }
+      ],
+      "screenshots": [
+        {
+          "path": "assets/project-images/ai-workshop/desktop.webp",
+          "alt": "AI Workshop overview in a desktop browser, with Britons and Portuguese presets and an experimental, native-game-unverified badge.",
+          "caption": "Editor overview · review branch"
+        },
+        {
+          "path": "assets/project-images/ai-workshop/adaptation.webp",
+          "alt": "Adaptation settings for creator limits and a recovery response, including trigger thresholds and emergency resource limits.",
+          "caption": "Adaptation controls"
+        },
+        {
+          "path": "assets/project-images/ai-workshop/placement.webp",
+          "alt": "Placement policy editor with a warning that the policy is not an exact map blueprint.",
+          "caption": "Placement policies"
+        },
+        {
+          "path": "assets/project-images/ai-workshop/export.webp",
+          "alt": "AI Workshop export screen showing generated code and a notice that native game behavior is unverified.",
+          "caption": "Export and verification notice"
+        },
+        {
+          "path": "assets/project-images/ai-workshop/mobile.webp",
+          "alt": "Mobile view of the AI Workshop editor with its experimental and native-game-unverified status visible.",
+          "caption": "Responsive editor view · 390 px"
+        }
+      ],
+      "links": [
+        {
+          "label": "Open live editor",
+          "href": "https://meghamsh738.github.io/Aoe2-AI-editor/"
+        },
+        {
+          "label": "View repository",
+          "href": "https://github.com/meghamsh738/Aoe2-AI-editor"
+        }
+      ]
+    },
+    {
+      "slug": "buzzer-club",
+      "name": "Buzzer Club",
+      "category": "Multiplayer quiz",
+      "status": "Version 12 · single-player host flow checked; multiplayer pending",
+      "summary": "A hosted quiz-night game with room-code and PIN entry, category picks, a 30-second answer step and a steal round.",
+      "statusDetail": "Production version 12 is live. In a synthetic one-player run, category selection, correct-answer +1, wrong-answer and timeout −1, host reveal/advance, the final leaderboard, room reopening, reload persistence and the four-question test bank were checked. Separate-player score sharing, turn rotation, buzzer claims, simultaneous claims and the +0.5 steal bonus remain unverified. The two gallery images show the public landing page, not a game session.",
+      "profileOrder": 6,
+      "profileHref": "https://meghamsh738.github.io/buzzer-club/",
+      "profileStatus": "Version 12 · single-player flow checked; multiplayer behavior unverified",
+      "profileLinks": [
+        {
+          "label": "Open showcase",
+          "href": "https://meghamsh738.github.io/buzzer-club/"
+        },
+        {
+          "label": "Play Buzzer Club",
+          "href": "https://buzzer-club-jeopardy.xpertthuggaming.chatgpt.site/"
+        }
+      ],
+      "screenshots": [
+        {
+          "path": "assets/project-images/buzzer-club/public-home-desktop.webp",
+          "alt": "Buzzer Club desktop landing page with guest room-code and PIN fields and a sign-in-to-host control.",
+          "caption": "Public landing page · desktop · 4 October 2026"
+        },
+        {
+          "path": "assets/project-images/buzzer-club/public-home-mobile.webp",
+          "alt": "Responsive mobile view of the Buzzer Club public landing page with guest joining and host sign-in.",
+          "caption": "Public landing page · mobile · 4 October 2026"
+        }
+      ],
+      "links": [
+        {
+          "label": "View showcase",
+          "href": "https://meghamsh738.github.io/buzzer-club/"
+        },
+        {
+          "label": "Open live app",
+          "href": "https://buzzer-club-jeopardy.xpertthuggaming.chatgpt.site/"
+        }
+      ]
+    },
+    {
+      "slug": "lab-notebook",
+      "name": "Lab Notebook",
+      "category": "Research records",
+      "status": "Sign-in gate only · editing and sync unverified",
+      "summary": "A local-first lab notebook entry point within the EasyLab ecosystem, designed around notes, attachments and experiment records.",
+      "statusDetail": "The only current screen is the Google sign-in gate. No account was used and no notebook content, editing, offline behavior or Drive sync was opened or verified.",
+      "screenshots": [
+        {
+          "path": "assets/project-images/lab-notebook/google-sign-in-gate.webp",
+          "alt": "EasyLab Lab Notebook public sign-in screen with no user account or notebook data shown.",
+          "caption": "Access gate only · no account used · 4 October 2026"
+        },
+        {
+          "path": "assets/project-images/lab-notebook/installed-suite-auth-gate.webp",
+          "alt": "Installed EasyLab Suite version 0.2.0 Lab Notebook entry point showing a Google sign-in gate; no account was used.",
+          "caption": "Installed Suite v0.2.0 · sign-in gate only · no account used · 4 October 2026"
+        }
+      ],
+      "links": [
+        {
+          "label": "View application repository",
+          "href": "https://github.com/meghamsh738/labnotebook-app"
+        }
+      ]
+    },
+    {
+      "slug": "snackmate",
+      "name": "SnackMate",
+      "category": "Small business workflow",
+      "status": "Private prototype · synthetic local browser preview",
+      "summary": "A snack-shop inventory and sales app previewed with one synthetic pizza order.",
+      "statusDetail": "The screenshots come from an isolated browser preview using synthetic data. The dashboard shows zero sales before the order; the bill is a draft, not a completed receipt; the sales report shows one locally saved order (token #001, ₹119, one item). The preview did not load Electron's window.snackStore API. The D-drive label is not evidence of a D-drive write. Electron persistence, external payments and release readiness were not tested. No public repository is linked because the source repository is private.",
+      "screenshots": [
+        {
+          "path": "assets/project-images/snackmate/dashboard.webp",
+          "alt": "SnackMate dashboard before the synthetic order, showing the empty-sales starting state.",
+          "caption": "Dashboard before the first order · synthetic browser preview"
+        },
+        {
+          "path": "assets/project-images/snackmate/draft-bill.webp",
+          "alt": "SnackMate new bill screen with a one-item Margherita Pizza draft; it has not been saved as a sale.",
+          "caption": "Draft bill · one synthetic item · not a completed sale"
+        },
+        {
+          "path": "assets/project-images/snackmate/sales-report.webp",
+          "alt": "SnackMate sales report after saving one synthetic Margherita Pizza order for ₹119 as token number 001.",
+          "caption": "Local preview report · one synthetic order · ₹119 · token #001"
+        }
+      ],
+      "links": []
+    },
+    {
+      "slug": "aoe2-hotkey-editor",
+      "name": "AoE2 Hotkey Editor",
+      "category": "Game design tool",
+      "status": "Public compiled-only demo · import, edit, reload and export checks passed; game behavior unverified",
+      "summary": "A browser editor for inspecting and editing Age of Empires II hotkey profiles, with local browser drafts and a synthetic demo.",
+      "statusDetail": "The public Build C Pages demo contains compiled static artifacts only; the original application source and Git history remain private. In a fresh signed-out browser, the bundled synthetic profile loaded; House was changed from Q to F11, the browser showed one saved change, and a page reload retained it. Export review validated 444 bindings across two HKP files with one change and no conflicts; the ZIP downloaded and re-imported with House on F11 and no pending changes. Mounted Crossbowman search returned the Cavalry Archer and Heavy Cavalry Archer aliases. No personal profile or game was used. Factory defaults, unresolved contexts and native in-game import/export behavior remain unverified.",
+      "profileOrder": 4,
+      "profileHref": "https://github.com/meghamsh738/aoe2-hotkey-editor-demo",
+      "profileStatus": "Build C public demo · synthetic import/edit/reload/ZIP re-import checked; game behavior unverified",
+      "profileScreenshotIndex": 1,
+      "profileLinks": [
+        {
+          "label": "Open public demo",
+          "href": "https://meghamsh738.github.io/aoe2-hotkey-editor-demo/"
+        },
+        {
+          "label": "View compiled demo repository",
+          "href": "https://github.com/meghamsh738/aoe2-hotkey-editor-demo"
+        }
+      ],
+      "screenshots": [
+        {
+          "path": "assets/project-images/aoe2-hotkey-editor/import-screen.webp",
+          "alt": "Public AoE2 Hotkey Editor Build C import screen offering a synthetic demo or local HKP files, with native-game behavior marked unverified.",
+          "caption": "Build C import screen · no personal profile loaded · game behavior unverified"
+        },
+        {
+          "path": "assets/project-images/aoe2-hotkey-editor/input-map-edit.webp",
+          "alt": "Public synthetic demo with House changed to F11; the browser reports one changed binding saved locally.",
+          "caption": "Synthetic House edit · F11 · browser draft saved and retained after reload"
+        },
+        {
+          "path": "assets/project-images/aoe2-hotkey-editor/command-aliases.webp",
+          "alt": "Public demo command search for Mounted Crossbowman showing Cavalry Archer and Heavy Cavalry Archer aliases.",
+          "caption": "Mounted Crossbowman command aliases · public Build C demo"
+        }
+      ],
+      "links": [
+        {
+          "label": "Open public demo",
+          "href": "https://meghamsh738.github.io/aoe2-hotkey-editor-demo/"
+        },
+        {
+          "label": "View compiled demo repository",
+          "href": "https://github.com/meghamsh738/aoe2-hotkey-editor-demo"
+        }
+      ]
+    }
+  ]
+}
