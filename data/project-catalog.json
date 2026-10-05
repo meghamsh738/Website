@@ -215,12 +215,12 @@
       "slug": "buzzer-club",
       "name": "Buzzer Club",
       "category": "Multiplayer quiz",
-      "status": "Reviewed-question demo prepared · gameplay screenshots pending",
+      "status": "One correct demo turn checked · match and screenshots pending",
       "summary": "A hosted quiz-night game with room-code and PIN entry, category picks, a 30-second answer step and a steal round.",
-      "statusDetail": "A separate friends-test demo is prepared with eight questions from the previously reviewed Keep pack; no questions have been played. The published game remains at version 12, and the shared live bank, original room, source and deployment were not changed. The two gallery images show the public landing page, not gameplay. Safe gameplay screenshots are still pending, so no match or multiplayer behavior is claimed.",
+      "statusDetail": "The separate demo uses eight questions from the previously reviewed Keep pack. One synthetic Technology turn was answered correctly; host and player both showed ‘Correct!’ and the automatic +1. The host reveal then displayed the explanation and reveal-only media. The linked clip opens in a new tab; playback was not tested. This single-player smoke test is not a complete or multiplayer match; seven of eight questions remain. The published game stays at version 12, and the shared bank, original room, source and deployment were unchanged. The two gallery images show the public landing page; gameplay files are pending. Wrong answers, timeouts, buzzer or steal claims, turn rotation, reload recovery, winner announcement, and broader persistence remain unverified.",
       "profileOrder": 6,
       "profileHref": "https://meghamsh738.github.io/buzzer-club/",
-      "profileStatus": "Reviewed-question demo prepared · gameplay screenshots pending",
+      "profileStatus": "One correct demo turn checked · full match unverified",
       "profileLinks": [
         {
           "label": "Open showcase",
