@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /Website/
+
+Sitemap: https://meghamsh738.github.io/Website/sitemap.xml
