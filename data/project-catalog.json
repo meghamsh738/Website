@@ -1,28 +1,43 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-10-04",
+  "updated": "2026-10-05",
   "projects": [
     {
       "slug": "atlasalign",
       "name": "AtlasAlign",
       "category": "Image analysis",
-      "status": "In progress · acceptance and export pending",
-      "summary": "A Fiji workflow for atlas-guided tissue alignment and ROI drawing. A recorded native checkpoint reached the Interior editor, but did not accept an alignment, create ROIs or export results.",
-      "statusDetail": "The October 2 checkpoint showed a locked outer border and 24 Interior points on each side. It still reported needs acceptance and 0 ROIs. The captured section is real tissue, and the installed plugin build does not match the current checkout, so a data-safe, version-matched gallery image is pending.",
-      "noScreenshotNote": "A data-safe, version-matched capture is pending; the available review image remains unaccepted.",
+      "status": "Current-build S40 views · acceptance, ROIs and export pending",
+      "summary": "A Fiji workflow for atlas-guided tissue alignment and ROI drawing. Current-build screenshots show a reopened S40 draft; no alignment was accepted, ROI finished or export completed.",
+      "statusDetail": "The installed package matches the verified 0.1.0-beta.3-SNAPSHOT manifest. The reopened S40 draft shows a locked outer border and 48/24 Interior dots; Draw ROIs still needs acceptance and reports 0 ready / 0 total ROIs with no export. No drag, acceptance, ROI completion or export was performed, and the original S40 project stayed unchanged. Review & Export was seen inline but its third image was not saved. The sample is ‘Serial Coronal Sections Of An Adult Mouse Brain — Sample Dataset’ by Bianca Ambrogina Silva, Zenodo 4715656, CC BY 4.0, DOI 10.5281/zenodo.4715656.",
       "profileOrder": 1,
       "profileHref": "https://github.com/meghamsh738/atlasalign",
-      "profileStatus": "In progress · native acceptance, ROI and export steps pending",
+      "profileStatus": "Current-build S40 views · acceptance, ROIs and export pending",
       "profileLinks": [
         {
           "label": "View repository",
           "href": "https://github.com/meghamsh738/atlasalign"
         }
       ],
+      "screenshots": [
+        {
+          "path": "assets/project-images/atlasalign/interior-s40.webp",
+          "alt": "AtlasAlign Interior editor on the reopened S40 sample, showing the cyan outer boundary locked and 48 left and 24 right dots.",
+          "caption": "Interior · reopened S40 draft · 48 left / 24 right · S40 by Bianca Ambrogina Silva · CC BY 4.0"
+        },
+        {
+          "path": "assets/project-images/atlasalign/draw-rois-s40.webp",
+          "alt": "AtlasAlign Draw ROIs stage on the reopened S40 sample, reporting needs acceptance, zero ready or total ROIs, and no export.",
+          "caption": "Draw ROIs · reopened S40 draft · S40 by Bianca Ambrogina Silva · CC BY 4.0"
+        }
+      ],
       "links": [
         {
           "label": "View repository",
           "href": "https://github.com/meghamsh738/atlasalign"
+        },
+        {
+          "label": "S40 sample dataset · CC BY 4.0",
+          "href": "https://doi.org/10.5281/zenodo.4715656"
         }
       ]
     },
@@ -200,12 +215,12 @@
       "slug": "buzzer-club",
       "name": "Buzzer Club",
       "category": "Multiplayer quiz",
-      "status": "Version 12 · single-player host flow checked; multiplayer pending",
+      "status": "Reviewed-question demo prepared · gameplay screenshots pending",
       "summary": "A hosted quiz-night game with room-code and PIN entry, category picks, a 30-second answer step and a steal round.",
-      "statusDetail": "Production version 12 is live. In a synthetic one-player run, category selection, correct-answer +1, wrong-answer and timeout −1, host reveal/advance, the final leaderboard, room reopening, reload persistence and the four-question test bank were checked. Separate-player score sharing, turn rotation, buzzer claims, simultaneous claims and the +0.5 steal bonus remain unverified. The two gallery images show the public landing page, not a game session.",
+      "statusDetail": "A separate friends-test demo is prepared with eight questions from the previously reviewed Keep pack; no questions have been played. The published game remains at version 12, and the shared live bank, original room, source and deployment were not changed. The two gallery images show the public landing page, not gameplay. Safe gameplay screenshots are still pending, so no match or multiplayer behavior is claimed.",
       "profileOrder": 6,
       "profileHref": "https://meghamsh738.github.io/buzzer-club/",
-      "profileStatus": "Version 12 · single-player flow checked; multiplayer behavior unverified",
+      "profileStatus": "Reviewed-question demo prepared · gameplay screenshots pending",
       "profileLinks": [
         {
           "label": "Open showcase",
@@ -251,9 +266,9 @@
       "slug": "lab-notebook",
       "name": "Lab Notebook",
       "category": "Research records",
-      "status": "Sign-in gate only · editing and sync unverified",
+      "status": "Showcase screenshots · sign-in gate only; editing and sync unverified",
       "summary": "A local-first lab notebook entry point within the EasyLab ecosystem, designed around notes, attachments and experiment records.",
-      "statusDetail": "The only current screen is the Google sign-in gate. No account was used and no notebook content, editing, offline behavior or Drive sync was opened or verified.",
+      "statusDetail": "Two saved captures show the sign-in gate through the standalone Notebook and installed EasyLab Suite v0.2.0 entry paths. No account was used, and notebook content, editing, offline behavior and Drive sync were not opened or verified.",
       "screenshots": [
         {
           "path": "assets/project-images/lab-notebook/google-sign-in-gate.webp",
