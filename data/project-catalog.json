@@ -7,7 +7,7 @@
       "name": "AtlasAlign",
       "category": "Image analysis",
       "status": "Current-build S40 views · acceptance, ROIs and export pending",
-      "summary": "A Fiji workflow for atlas-guided tissue alignment and ROI drawing. Current-build screenshots show a reopened S40 draft; no alignment was accepted, ROI finished or export completed.",
+      "summary": "Atlas-guided tissue alignment and ROI drawing, inside Fiji. Review the boundary, refine the fit and keep the original image in view.",
       "statusDetail": "The installed package matches the verified 0.1.0-beta.3-SNAPSHOT manifest. The reopened S40 draft shows a locked outer border and 48/24 Interior dots; Draw ROIs still needs acceptance and reports 0 ready / 0 total ROIs with no export. No drag, acceptance, ROI completion or export was performed, and the original S40 project stayed unchanged. Review & Export was seen inline but its third image was not saved. The sample is ‘Serial Coronal Sections Of An Adult Mouse Brain — Sample Dataset’ by Bianca Ambrogina Silva, Zenodo 4715656, CC BY 4.0, DOI 10.5281/zenodo.4715656.",
       "profileOrder": 1,
       "profileHref": "https://github.com/meghamsh738/atlasalign",
@@ -39,14 +39,17 @@
           "label": "S40 sample dataset · CC BY 4.0",
           "href": "https://doi.org/10.5281/zenodo.4715656"
         }
-      ]
+      ],
+      "filterGroup": "research",
+      "displayStatus": "In development",
+      "videos": []
     },
     {
       "slug": "easy-lab-suite",
       "name": "EasyLab Suite",
       "category": "Research workflow tools",
       "status": "Version 0.2.0 review build · source branch unmerged",
-      "summary": "An eight-module lab workspace for qPCR planning and analysis, cDNA setup, ELISA, colony workflows, Y-maze schedules and a Lab Notebook entry point.",
+      "summary": "Eight practical lab tools in one workspace, from qPCR planning and cDNA setup to ELISA, colony workflows and experiment notes.",
       "statusDetail": "The screenshots identify an installed 0.2.0 review build. The Oct 2 capture set includes synthetic overview, qPCR, cDNA and ELISA screens plus a 390 px launcher preview. Pairing, Breeding and Y-maze images are older bundled examples from Dec 28, 2025. The latest GitHub check found codex/suite-ui-refresh at b390d9e, six commits ahead of main and unmerged. This portfolio update did not reopen the app; Notebook sign-in, editing and Drive sync remain unverified.",
       "profileOrder": 2,
       "profileHref": "https://github.com/meghamsh738/EasyLab-suite",
@@ -105,14 +108,17 @@
           "label": "View repository",
           "href": "https://github.com/meghamsh738/EasyLab-suite"
         }
-      ]
+      ],
+      "filterGroup": "research",
+      "displayStatus": "Desktop preview",
+      "videos": []
     },
     {
       "slug": "mouse-colony-manager",
       "name": "Mouse Colony Manager",
       "category": "Lab operations",
       "status": "M16-based prototype · synthetic cage create/reload checked; M17 paused",
-      "summary": "A Next.js and Prisma app for cage-first colony operations and animal-first research workflows. The gallery shows an isolated synthetic local prototype.",
+      "summary": "A shared view of animals, cages and daily colony work. Designed around the way a research facility actually operates.",
       "statusDetail": "The demo ran from codex/empty-colony at abdbbdb, with the checkout's pre-existing dirty recovery changes present (23 modified and 11 untracked paths); this portfolio run made no source edits. The local runtime applied all 42 checked-in migrations to a fresh disposable PostgreSQL 16 database. Its dashboard, Animals and Cages screens used synthetic records. One empty cage was created and remained after a fresh Cages page load: A101/R1/006, barcode CM-A101-R1-006, Active, 0/6. No animals were moved, and no console errors were recorded. This is not a pristine M16 build or a release claim. M17 remains paused and its recovery worktree was preserved.",
       "profileOrder": 3,
       "profileHref": "https://github.com/meghamsh738/Mouse-colony-manager",
@@ -151,15 +157,18 @@
           "label": "View repository",
           "href": "https://github.com/meghamsh738/Mouse-colony-manager"
         }
-      ]
+      ],
+      "filterGroup": "research",
+      "displayStatus": "Working prototype",
+      "videos": []
     },
     {
       "slug": "aoe2-ai-workshop",
       "name": "Adaptive AI Workshop",
       "category": "Game design tool",
       "status": "Experimental · public GitHub Pages demo live; native game behavior unverified",
-      "summary": "A visual editor for building and adapting Age of Empires II strategy plans, with controls for responses and placement policies.",
-      "statusDetail": "PR #1 merged as a5e9bb7 and the public Pages demo is live at the project URL; anonymous HTTP check returned 200. The editor's native game behavior remains unverified: AoE II was not launched and no custom AI file was loaded. The five gallery images document the reviewed editor interface, not in-game results.",
+      "summary": "A visual workshop for Age of Empires II strategy plans. Explore presets, adaptation rules and placement policies, then export a draft.",
+      "statusDetail": "PR #1 merged as a5e9bb7 and the public Pages demo is live at the project URL; anonymous HTTP check returned 200. The editor's native game behavior remains unverified: AoE II was not launched and no custom AI file was loaded. The five gallery images document the reviewed editor interface, not in-game results. The silent 5 October recording shows the current public Pages bundle index-C4CZBw_G.js: Portuguese preset, a renamed project, Adaptation and Placement, project download, recovery after reload, re-import of that saved project, and the export preview. It does not demonstrate native gameplay or a downloaded bot ZIP.",
       "profileOrder": 5,
       "profileHref": "https://meghamsh738.github.io/Aoe2-AI-editor/",
       "profileStatus": "Experimental · public Pages demo live; native game behavior unverified",
@@ -209,6 +218,20 @@
           "label": "View repository",
           "href": "https://github.com/meghamsh738/Aoe2-AI-editor"
         }
+      ],
+      "filterGroup": "games",
+      "displayStatus": "Live · experimental",
+      "videos": [
+        {
+          "path": "assets/project-videos/ai-workshop-2026-10-05.webm",
+          "poster": "assets/project-videos/ai-workshop-poster.webp",
+          "title": "AI Workshop: shape an adaptive strategy",
+          "caption": "Public Pages · Portuguese preset → adaptation → placement → save, reload and import → export preview · 5 October 2026 · silent",
+          "recordedAt": "2026-10-05",
+          "version": "Public Pages bundle index-C4CZBw_G.js",
+          "sourceUrl": "https://meghamsh738.github.io/Aoe2-AI-editor/",
+          "hasSpeech": false
+        }
       ]
     },
     {
@@ -216,7 +239,7 @@
       "name": "Buzzer Club",
       "category": "Multiplayer quiz",
       "status": "One correct demo turn checked · match and screenshots pending",
-      "summary": "A hosted quiz-night game with room-code and PIN entry, category picks, a 30-second answer step and a steal round.",
+      "summary": "A quiz night for your own questions. Choose a category, race the clock and give other players a chance to steal.",
       "statusDetail": "The separate demo uses eight questions from the previously reviewed Keep pack. One synthetic Technology turn was answered correctly; host and player both showed ‘Correct!’ and the automatic +1. The host reveal then displayed the explanation and reveal-only media. The linked clip opens in a new tab; playback was not tested. This single-player smoke test is not a complete or multiplayer match; seven of eight questions remain. The published game stays at version 12, and the shared bank, original room, source and deployment were unchanged. The two gallery images show the public landing page; gameplay files are pending. Wrong answers, timeouts, buzzer or steal claims, turn rotation, reload recovery, winner announcement, and broader persistence remain unverified.",
       "profileOrder": 6,
       "profileHref": "https://meghamsh738.github.io/buzzer-club/",
@@ -249,36 +272,34 @@
       ],
       "links": [
         {
-          "label": "View showcase",
+          "label": "Play on Sites",
+          "href": "https://buzzer-club-jeopardy.xpertthuggaming.chatgpt.site/"
+        },
+        {
+          "label": "Project showcase",
           "href": "https://meghamsh738.github.io/buzzer-club/"
         },
         {
-          "label": "View showcase repository",
+          "label": "Showcase repository",
           "href": "https://github.com/meghamsh738/buzzer-club"
-        },
-        {
-          "label": "Open live app",
-          "href": "https://buzzer-club-jeopardy.xpertthuggaming.chatgpt.site/"
         }
-      ]
+      ],
+      "filterGroup": "games",
+      "displayStatus": "Live on Sites",
+      "videos": []
     },
     {
       "slug": "lab-notebook",
       "name": "Lab Notebook",
       "category": "Research records",
       "status": "Showcase screenshots · sign-in gate only; editing and sync unverified",
-      "summary": "A local-first lab notebook entry point within the EasyLab ecosystem, designed around notes, attachments and experiment records.",
-      "statusDetail": "Two saved captures show the sign-in gate through the standalone Notebook and installed EasyLab Suite v0.2.0 entry paths. No account was used, and notebook content, editing, offline behavior and Drive sync were not opened or verified.",
+      "summary": "An experiment notebook within the EasyLab ecosystem, designed to keep notes, attachments and research records together.",
+      "statusDetail": "The duplicate sign-in-gate captures have been consolidated into one showcase view. The original capture was reached through standalone Notebook and installed EasyLab Suite v0.2.0 entry paths. No account was used; notebook content, editing, offline behavior and Drive sync remain unverified.",
       "screenshots": [
         {
           "path": "assets/project-images/lab-notebook/google-sign-in-gate.webp",
           "alt": "EasyLab Lab Notebook public sign-in screen with no user account or notebook data shown.",
           "caption": "Access gate only · no account used · 4 October 2026"
-        },
-        {
-          "path": "assets/project-images/lab-notebook/installed-suite-auth-gate.webp",
-          "alt": "Installed EasyLab Suite version 0.2.0 Lab Notebook entry point showing a Google sign-in gate; no account was used.",
-          "caption": "Installed Suite v0.2.0 · sign-in gate only · no account used · 4 October 2026"
         }
       ],
       "links": [
@@ -286,14 +307,17 @@
           "label": "View application repository",
           "href": "https://github.com/meghamsh738/labnotebook-app"
         }
-      ]
+      ],
+      "filterGroup": "research",
+      "displayStatus": "Interface preview",
+      "videos": []
     },
     {
       "slug": "snackmate",
       "name": "SnackMate",
       "category": "Small business workflow",
       "status": "Private prototype · synthetic local browser preview",
-      "summary": "A snack-shop inventory and sales app previewed with one synthetic pizza order.",
+      "summary": "A focused workspace for a snack shop: products, stock, orders and a clear view of daily sales.",
       "statusDetail": "The screenshots come from an isolated browser preview using synthetic data. The dashboard shows zero sales before the order; the bill is a draft, not a completed receipt; the sales report shows one locally saved order (token #001, ₹119, one item). The preview did not load Electron's window.snackStore API. The D-drive label is not evidence of a D-drive write. Electron persistence, external payments and release readiness were not tested. No public repository is linked because the source repository is private.",
       "screenshots": [
         {
@@ -312,15 +336,18 @@
           "caption": "Local preview report · one synthetic order · ₹119 · token #001"
         }
       ],
-      "links": []
+      "links": [],
+      "filterGroup": "everyday",
+      "displayStatus": "Private prototype",
+      "videos": []
     },
     {
       "slug": "aoe2-hotkey-editor",
       "name": "AoE2 Hotkey Editor",
       "category": "Game design tool",
       "status": "Public compiled-only demo · import, edit, reload and export checks passed; game behavior unverified",
-      "summary": "A browser editor for inspecting and editing Age of Empires II hotkey profiles, with local browser drafts and a synthetic demo.",
-      "statusDetail": "The public Build C Pages demo contains compiled static artifacts only; the original application source and Git history remain private. In a fresh signed-out browser, the bundled synthetic profile loaded; House was changed from Q to F11, the browser showed one saved change, and a page reload retained it. Export review validated 444 bindings across two HKP files with one change and no conflicts; the ZIP downloaded and re-imported with House on F11 and no pending changes. Mounted Crossbowman search returned the Cavalry Archer and Heavy Cavalry Archer aliases. No personal profile or game was used. Factory defaults, unresolved contexts and native in-game import/export behavior remain unverified.",
+      "summary": "A clearer way to explore and edit Age of Empires II hotkeys. Browse actions, check conflicts and build a profile that fits how you play.",
+      "statusDetail": "The public Build C Pages demo contains compiled static artifacts only; the original application source and Git history remain private. In a fresh signed-out browser, the bundled synthetic profile loaded; House was changed from Q to F11, the browser showed one saved change, and a page reload retained it. Export review validated 444 bindings across two HKP files with one change and no conflicts; the ZIP downloaded and re-imported with House on F11 and no pending changes. Mounted Crossbowman search returned the Cavalry Archer and Heavy Cavalry Archer aliases. No personal profile or game was used. Factory defaults, unresolved contexts and native in-game import/export behavior remain unverified. The silent 5 October recording is a separate check of public Sites v13: bundled Base1 opened, House was applied to F11, a reload retained one changed binding, and the ZIP downloaded after a 444-binding, two-file review with no action conflicts. This recording does not verify in-game behavior or ZIP re-import on v13. Product testing remains ahead of streamer promotion.",
       "profileOrder": 4,
       "profileHref": "https://github.com/meghamsh738/aoe2-hotkey-editor-demo",
       "profileStatus": "Build C public demo · synthetic import/edit/reload/ZIP re-import checked; game behavior unverified",
@@ -354,12 +381,30 @@
       ],
       "links": [
         {
-          "label": "Open public demo",
+          "label": "Launch on Sites",
+          "href": "https://aoe2-hotkey-editor.xpertthuggaming.chatgpt.site/"
+        },
+        {
+          "label": "Try Pages demo",
           "href": "https://meghamsh738.github.io/aoe2-hotkey-editor-demo/"
         },
         {
-          "label": "View compiled demo repository",
+          "label": "Demo repository",
           "href": "https://github.com/meghamsh738/aoe2-hotkey-editor-demo"
+        }
+      ],
+      "filterGroup": "games",
+      "displayStatus": "Live on Sites",
+      "videos": [
+        {
+          "path": "assets/project-videos/hotkey-editor-2026-10-05.webm",
+          "poster": "assets/project-videos/hotkey-editor-poster.webp",
+          "title": "Hotkey Editor: from profile to export",
+          "caption": "Sites v13 · bundled Base1 → House on F11 → reload → ZIP export · 5 October 2026 · silent",
+          "recordedAt": "2026-10-05",
+          "version": "Public Hotkey Editor Site v13",
+          "sourceUrl": "https://aoe2-hotkey-editor.xpertthuggaming.chatgpt.site/",
+          "hasSpeech": false
         }
       ]
     }
