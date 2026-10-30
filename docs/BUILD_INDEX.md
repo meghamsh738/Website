@@ -1,5 +1,35 @@
 # Portfolio build index
 
+## Current release and timeline update — 30 October 2026
+
+Science studio v1 is published on GitHub Pages at
+https://meghamsh738.github.io/Website/. PR #4 was merged as
+`263ddd48917a33aa1a30bc0b66ce3db1dee0eddf`; Pages workflow run
+[41076084273](https://github.com/meghamsh738/Website/actions/runs/41076084273)
+succeeded. The public build passed the 16 recorded browser check groups.
+
+The **CV research timeline** implementation `670c19b` on `codex/cv-research-timeline` adds six
+education/research milestones, a detailed NCBS methods section and updated
+skills. [Content boundaries](RESEARCH_BACKGROUND.md) distinguish the Trinity
+lab joining date from the unconfirmed PhD start date. GitHub merge approval is
+still required for this new update. The parallel Sites release uses the same
+content with its existing root URL and audience.
+
+Validation: both production builds and catalog checks passed (8 projects,
+28 images, 2 videos). Background browser checks covered desktop 1440×1000,
+tablet 820×1180, phones 390×844 and 360×800, a 720-CSS-pixel layout equivalent
+to 200% zoom, keyboard focus/links, mobile navigation, reduced motion, static
+content without page JavaScript, internal anchors and an existing gallery.
+No horizontal overflow or browser errors were found. Browser-chrome zoom was
+not changed. Screenshots and checks are in the task folder
+`outputs/portfolio-overhaul/cv-timeline-2026-10-30/` and are tied to source
+hashes in its manifest. No linked app source or media was changed.
+
+## Historical build records
+
+The entries below describe the state at their original review date; the release
+status above supersedes their pending-publication wording.
+
 | Build | Branch / review | Scope | Status |
 | --- | --- | --- | --- |
 | Evidence refresh `f0dc94d` | `codex/portfolio-refresh`, PR #4 | Prior eight-project gallery, verified biography/publication and bounded project evidence | Superseded locally by the science studio overhaul; never merged here |
