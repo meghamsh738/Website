@@ -830,25 +830,40 @@ h3,h4{
 .about{
   border-top:1px solid var(--line)
 }
-.education-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:2rem;
-  margin-block:3rem
+.research-experience{
+  margin-top:4rem;
+  padding-top:3rem;
+  border-top:1px solid var(--line)
 }
-.education-grid article{
-  border-left:2px solid #82ead04d;
-  padding-left:1.5rem
-}
-.education-grid h3{
-  font-size:1.1rem;
-  margin:.5rem 0
-}
-.education-grid p{
-  font-size:.9rem;
-  color:var(--muted);
-  margin:0
-}
+.experience-intro{max-width:760px}
+.experience-intro h3{font-size:clamp(1.6rem,3vw,2.25rem);font-weight:500;line-height:1.3;margin:.7rem 0 1rem}
+.experience-intro>p:last-child,.experience-code{color:var(--muted)}
+.experience-methods{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+.experience-methods article{padding:1.5rem 0;border-top:1px solid var(--line)}
+.method-number{font-size:.875rem;color:var(--violet);font-variant-numeric:tabular-nums}
+.experience-methods h4{font-size:1.05rem;line-height:1.5;font-weight:600;margin:.8rem 0}
+.experience-methods p{font-size:1rem;line-height:1.75;color:var(--muted);margin:0}
+.experience-code{margin:1rem 0 0;font-size:1rem;max-width:800px}
+.career-timeline{display:grid;grid-template-columns:.7fr 1.3fr;gap:5rem;margin:4rem 0 3rem;scroll-margin-top:1rem}
+.timeline-heading{position:sticky;top:8rem;align-self:start}
+.timeline-heading h3{font-size:clamp(2.5rem,4.5vw,4.4rem);font-weight:500;line-height:1.13;letter-spacing:-.045em;margin:.75rem 0 1.25rem}
+.timeline-heading h3 em{color:var(--teal);font-family:var(--serif);font-weight:400}
+.timeline-heading>p:not(.eyebrow){color:var(--muted);max-width:300px}
+.timeline-list{list-style:none;padding:0 0 0 2.25rem;margin:0;position:relative}
+.timeline-list::before{content:"";position:absolute;left:0;top:.5rem;bottom:2rem;width:1px;background:linear-gradient(var(--teal),#82ead050 60%,var(--violet))}
+.timeline-entry{position:relative;padding:0 0 2.25rem;margin:0 0 2.25rem;border-bottom:1px solid var(--line)}
+.timeline-entry::before{content:"";position:absolute;left:-2.55rem;top:.45rem;width:.65rem;height:.65rem;border-radius:50%;background:var(--bg);border:2px solid var(--teal)}
+.timeline-entry:last-child{border-bottom:0;padding-bottom:0;margin-bottom:0}
+.timeline-entry--current::before{background:var(--teal);box-shadow:0 0 0 5px #82ead018}
+.timeline-entry--publication::before{border-color:var(--violet);background:var(--violet)}
+.timeline-date{display:flex;flex-wrap:wrap;gap:0 .2rem;align-items:baseline;color:var(--teal);font-size:.9rem;line-height:1.5;margin:0 0 .75rem;font-variant-numeric:tabular-nums}
+.timeline-date span{margin-left:.8rem;color:var(--quiet);font-size:.875rem}
+.timeline-entry h4{font-size:clamp(1.2rem,2vw,1.5rem);font-weight:550;line-height:1.4;letter-spacing:-.025em;margin:0 0 .45rem}
+.timeline-entry>p:not(.timeline-date){font-size:1rem;color:var(--muted);line-height:1.8;margin:.75rem 0 1rem}
+.timeline-entry>p.timeline-place{color:var(--quiet);font-size:.9rem;margin-top:0}
+.timeline-entry--publication .timeline-date{color:var(--violet)}
+.research-qualifications{padding:1.5rem 0 2.5rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.75rem 2rem}
+.research-qualifications p{margin:0;font-size:.9rem;color:var(--muted)}
 .methods{
   padding-top:2.5rem;
   border-top:1px solid var(--line)
@@ -1310,11 +1325,16 @@ h3,h4{
   .projects-footer{
     display:block
   }
-  .education-grid{
-    grid-template-columns:1fr;
-    gap:1.5rem;
-    margin-block:2rem
-  }
+  .research-experience{margin-top:3rem;padding-top:2rem}
+  .experience-methods{grid-template-columns:1fr;gap:0}
+  .career-timeline{grid-template-columns:1fr;gap:2rem;margin-block:3rem}
+  .timeline-heading{position:static}
+  .timeline-heading>p:not(.eyebrow){max-width:none}
+  .timeline-list{padding-left:1.5rem}
+  .timeline-entry::before{left:-1.8rem}
+  .timeline-date span{width:100%;margin:.25rem 0 0}
+  .research-qualifications{display:block}
+  .research-qualifications p{margin-top:.75rem}
   .methods-heading{
     display:block
   }
