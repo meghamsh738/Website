@@ -1,511 +1,119 @@
-/* ================================================================
-   script.js – Interactions & Animations
-   Meghamsh Teja PhD Website
-   ================================================================ */
+import { Gallery, createViewer, pauseAllVideos } from './gallery.js';
 
-'use strict';
-
-/* ── Helpers ──────────────────────────────────────────────────── */
-const $ = (sel, ctx = document) => ctx.querySelector(sel);
-const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
-
-/* ── Year ─────────────────────────────────────────────────────── */
-const yearEl = $('#year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-/* ── Navigation: scroll behaviour ────────────────────────────── */
-const navbar = $('#navbar');
-const SCROLL_THRESHOLD = 60;
-
-function updateNav() {
-  if (!navbar) return;
-  navbar.classList.toggle('scrolled', window.scrollY > SCROLL_THRESHOLD);
-}
-window.addEventListener('scroll', updateNav, { passive: true });
-updateNav();
-
-/* ── Navigation: active link highlighting ─────────────────────── */
-const sections = $$('section[id]');
-const navLinks  = $$('.nav__link');
-
-function setActiveLink() {
-  let current = '';
-  sections.forEach(sec => {
-    if (window.scrollY >= sec.offsetTop - 140) current = sec.id;
-  });
-  navLinks.forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
-  });
-}
-window.addEventListener('scroll', setActiveLink, { passive: true });
-setActiveLink();
-
-/* ── Mobile nav toggle ────────────────────────────────────────── */
-const navToggle = $('#navToggle');
-const navLinksEl = $('#navLinks');
-
-if (navToggle && navLinksEl) {
-  navToggle.addEventListener('click', () => {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!expanded));
-    navToggle.classList.toggle('open', !expanded);
-    navLinksEl.classList.toggle('open', !expanded);
-    document.body.style.overflow = expanded ? '' : 'hidden';
-  });
-
-  // Close on link click
-  navLinksEl.addEventListener('click', e => {
-    if (e.target.classList.contains('nav__link')) {
-      navToggle.classList.remove('open');
-      navLinksEl.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-  });
-
-  // Close on Escape
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && navLinksEl.classList.contains('open')) {
-      navToggle.click();
-    }
-  });
-}
-
-/* ── Reveal on scroll (Intersection Observer) ─────────────────── */
-const revealObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.12, rootMargin: '0px 0px -48px 0px' }
-);
-
-$$('.reveal').forEach((el, i) => {
-  el.style.transitionDelay = `${(i % 6) * 0.07}s`;
-  revealObserver.observe(el);
+const menuButton = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('#site-nav');
+function closeMenu() { menuButton?.setAttribute('aria-expanded', 'false'); siteNav?.classList.remove('is-open'); }
+menuButton?.addEventListener('click', () => {
+  const open = menuButton.getAttribute('aria-expanded') !== 'true';
+  menuButton.setAttribute('aria-expanded', String(open)); siteNav.classList.toggle('is-open', open);
 });
+siteNav?.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
+document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+document.addEventListener('click', event => { if (!siteNav?.contains(event.target) && !menuButton?.contains(event.target)) closeMenu(); });
+const year = document.querySelector('#year');
+if (year) year.textContent = new Date().getFullYear();
 
-/* ── Skill bars animation ─────────────────────────────────────── */
-const skillObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      $$('.skill-item__fill', entry.target).forEach(fill => {
-        fill.classList.add('animated');
-      });
-      skillObserver.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.25 }
-);
-
-$$('.skills__group').forEach(g => skillObserver.observe(g));
-
-/* ── Typewriter / role rotation ───────────────────────────────── */
-const roles = [
-  'Neuroimmunologist',
-  'PhD Researcher',
-  'Glial Biologist',
-  'scRNA-seq Analyst',
-  'Coder & Tinkerer',
-];
-const roleEl = $('#roleDynamic');
-
-if (roleEl) {
-  let roleIdx = 0;
-  let charIdx = 0;
-  let deleting = false;
-
-  function typeRole() {
-    const current = roles[roleIdx];
-
-    if (!deleting) {
-      roleEl.textContent = current.slice(0, charIdx + 1);
-      charIdx++;
-      if (charIdx === current.length) {
-        deleting = true;
-        setTimeout(typeRole, 1400); // hold before deleting
-        return;
-      }
-      setTimeout(typeRole, 65);
-    } else {
-      roleEl.textContent = current.slice(0, charIdx);
-      charIdx--;
-      if (charIdx === 0) {
-        deleting = false;
-        roleIdx = (roleIdx + 1) % roles.length;
-        setTimeout(typeRole, 350);
-        return;
-      }
-      setTimeout(typeRole, 35);
-    }
+const grid = document.querySelector('#project-grid');
+const status = document.querySelector('#project-status');
+const count = document.querySelector('#project-count');
+const viewer = createViewer();
+const galleries = [];
+const projectCards = [];
+function el(tag, className, text) { const node = document.createElement(tag); node.className = className; if (text != null) node.textContent = text; return node; }
+function renderProject(project, index) {
+  const card = el('article', 'project-card');
+  card.id = `project-${project.slug}`;
+  card.dataset.group = project.filterGroup;
+  card.setAttribute('aria-labelledby', `title-${project.slug}`);
+  const topline = el('div', 'project-topline');
+  topline.append(el('span', 'project-number', `PROJECT ${String(index + 1).padStart(2, '0')}`), el('span', 'project-state', project.displayStatus));
+  const gallery = new Gallery(project, { onExpand: (index, trigger) => viewer(project, index, trigger) });
+  galleries.push(gallery);
+  const body = el('div', 'project-body');
+  const title = el('h3', 'project-title', project.name); title.id = `title-${project.slug}`;
+  body.append(el('p', 'project-category', project.category), title, el('p', 'project-summary', project.summary));
+  const links = el('div', 'project-links');
+  for (const item of project.links ?? []) {
+    if (!item.href.startsWith('https://')) continue;
+    const link = el('a', '', item.label); link.href = item.href; link.target = '_blank'; link.rel = 'noopener noreferrer';
+    links.append(link);
   }
-
-  setTimeout(typeRole, 800);
+  if (links.childElementCount) body.append(links);
+  const details = el('details', 'project-notes');
+  details.append(el('summary', '', 'Current scope & project notes'), el('p', '', project.statusDetail));
+  body.append(details);
+  card.append(topline, gallery.root, body);
+  projectCards.push({ card, gallery });
+  return card;
 }
-
-/* ── Neural canvas background ─────────────────────────────────── */
-(function initCanvas() {
-  const canvas = $('#neuralCanvas');
-  if (!canvas) return;
-
-  const ctx = canvas.getContext('2d');
-  let W, H, nodes, raf;
-
-  const NODE_COUNT = 55;
-  const MAX_DIST = 160;
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-
-  function randomNode() {
-    return {
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      r: Math.random() * 2 + 1,
-    };
-  }
-
-  function init() {
-    resize();
-    nodes = Array.from({ length: NODE_COUNT }, randomNode);
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-
-    // Update positions
-    nodes.forEach(n => {
-      n.x += n.vx;
-      n.y += n.vy;
-      if (n.x < 0 || n.x > W) n.vx *= -1;
-      if (n.y < 0 || n.y > H) n.vy *= -1;
-    });
-
-    // Draw edges
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const dx = nodes[i].x - nodes[j].x;
-        const dy = nodes[i].y - nodes[j].y;
-        const dist = Math.hypot(dx, dy);
-        if (dist < MAX_DIST) {
-          const alpha = (1 - dist / MAX_DIST) * 0.18;
-          ctx.beginPath();
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.strokeStyle = `rgba(0,212,212,${alpha})`;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-        }
+async function loadProjects() {
+  try {
+    const response = await fetch(`${import.meta.env.BASE_URL}data/project-catalog.json`);
+    if (!response.ok) throw new Error(`Catalog returned ${response.status}`);
+    const catalog = await response.json();
+    if (!catalog.projects?.length) throw new Error('Empty catalog');
+    grid.replaceChildren(...catalog.projects.map(renderProject));
+    galleries.forEach(gallery => gallery.mount());
+    count.textContent = `${catalog.projects.length} projects`;
+    status.textContent = `Showing all ${catalog.projects.length} projects.`;
+    for (const button of document.querySelectorAll('[data-filter]')) button.addEventListener('click', () => {
+      pauseAllVideos();
+      document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      let visible = 0;
+      for (const { card, gallery } of projectCards) {
+        card.hidden = button.dataset.filter !== 'all' && card.dataset.group !== button.dataset.filter;
+        if (!card.hidden) { visible++; gallery.api?.reInit(); }
       }
-    }
-
-    // Draw nodes
-    nodes.forEach(n => {
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(0,212,212,0.45)';
-      ctx.fill();
+      count.textContent = `${visible} ${visible === 1 ? 'project' : 'projects'}`;
+      status.textContent = `Showing ${visible} ${button.dataset.filter === 'all' ? '' : button.textContent.toLowerCase() + ' '}projects.`;
     });
+  } catch (error) {
+    console.error('Project gallery could not load.', error);
+    grid.replaceChildren(el('p', 'project-loading', 'The project gallery could not load. Please try refreshing, or browse the repositories below.'));
+    status.textContent = 'Project gallery unavailable.';
+  } finally { grid.setAttribute('aria-busy', 'false'); }
+}
+loadProjects();
 
-    raf = requestAnimationFrame(draw);
-  }
-
-  init();
-  draw();
-
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => { resize(); }, 150);
+const sceneHost = document.querySelector('#neural-scene');
+const motionButton = document.querySelector('#motion-toggle');
+const sceneStatus = document.querySelector('#scene-status');
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+let scene;
+let loadingScene;
+let motionEnabled = !reducedMotion.matches;
+let sceneAvailable = true;
+function updateMotionButton() {
+  motionButton.hidden = false;
+  motionButton.setAttribute('aria-pressed', String(!motionEnabled));
+  motionButton.textContent = motionEnabled ? 'Pause motion' : 'Enable motion';
+  sceneStatus.textContent = motionEnabled ? 'Drag to explore · select a connection' : 'Still view · select a connection to explore';
+}
+async function loadScene() {
+  if (scene || loadingScene || !motionEnabled || !sceneAvailable) return loadingScene;
+  loadingScene = import('./neural-scene.js').then(({ initNeuralScene }) => {
+    scene = initNeuralScene(sceneHost, () => {
+      sceneAvailable = false; motionEnabled = false; updateMotionButton();
+      motionButton.hidden = true;
+      sceneStatus.textContent = 'Still view · select a connection to explore';
+    });
+    scene?.setMotion(motionEnabled);
+  }).catch(() => {
+    sceneAvailable = false; motionEnabled = false; motionButton.hidden = true;
+    sceneStatus.textContent = 'Still view · select a connection to explore';
   });
-})();
-
-/* ── Smooth scroll for nav links ──────────────────────────────── */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (!target) return;
-    e.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
+  return loadingScene;
+}
+updateMotionButton();
+motionButton.addEventListener('click', () => {
+  motionEnabled = !motionEnabled;
+  updateMotionButton();
+  if (motionEnabled) loadScene();
+  scene?.setMotion(motionEnabled);
 });
-
-/* ── Stagger children within sections on first reveal ─────────── */
-const staggerObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const children = $$(':scope > *', entry.target);
-      children.forEach((child, i) => {
-        child.style.transitionDelay = `${i * 0.08}s`;
-        child.classList.add('visible');
-      });
-      staggerObserver.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.1 }
-);
-
-// Apply stagger to grid containers that contain reveal children
-['.research__focus-grid', '.projects__grid', '.skills__grid', '.about__stats'].forEach(sel => {
-  $$(sel).forEach(el => {
-    // Mark children as reveal targets if not already
-    $$(':scope > *', el).forEach(child => {
-      if (!child.classList.contains('reveal')) {
-        child.classList.add('reveal');
-        revealObserver.observe(child);
-      }
-    });
-  });
+reducedMotion.addEventListener('change', event => {
+  motionEnabled = !event.matches; updateMotionButton(); scene?.setMotion(motionEnabled);
+  if (motionEnabled) loadScene();
 });
-
-/* ── Microglia Interactive Canvas ────────────────────────────────── */
-(function initMicrogliaCanvas() {
-  const canvas = document.getElementById('microgliaCanvas');
-  if (!canvas) return;
-
-  const ctx = canvas.getContext('2d');
-  let W, H, cells, signals = [];
-  const mouse = { x: -9999, y: -9999 };
-
-  const CELL_COUNT    = 14;
-  const NUM_PROCESSES = 8;
-  const SENSE_RADIUS  = 130;
-  const ACTIVE_RADIUS = 55;
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-
-  function Process(baseAngle) {
-    this.angle       = baseAngle + (Math.random() - 0.5) * 0.5;
-    this.length      = 14 + Math.random() * 8;
-    this.targetLen   = this.length;
-    this.wave        = Math.random() * Math.PI * 2;
-    this.waveSpeed   = 0.014 + Math.random() * 0.01;
-  }
-
-  function MicrogliaCell() {
-    this.x    = Math.random() * (W || 800);
-    this.y    = Math.random() * (H || 420);
-    this.vx   = (Math.random() - 0.5) * 0.22;
-    this.vy   = (Math.random() - 0.5) * 0.22;
-    this.activation = 0;
-    this.processes  = Array.from({ length: NUM_PROCESSES }, (_, i) =>
-      new Process((Math.PI * 2 / NUM_PROCESSES) * i)
-    );
-  }
-
-  MicrogliaCell.prototype.update = function (mx, my) {
-    this.x += this.vx;
-    this.y += this.vy;
-    if (this.x < 18) this.vx =  Math.abs(this.vx);
-    if (this.x > W - 18) this.vx = -Math.abs(this.vx);
-    if (this.y < 18) this.vy =  Math.abs(this.vy);
-    if (this.y > H - 18) this.vy = -Math.abs(this.vy);
-
-    const cdx = mx - this.x;
-    const cdy = my - this.y;
-    const cdist = Math.hypot(cdx, cdy);
-    const cursorAngle = Math.atan2(cdy, cdx);
-
-    let targetActivation = 0;
-    let towardCursor     = false;
-
-    if (cdist < ACTIVE_RADIUS) {
-      targetActivation = 1;
-      towardCursor = true;
-    } else if (cdist < SENSE_RADIUS && SENSE_RADIUS > ACTIVE_RADIUS) {
-      targetActivation = (SENSE_RADIUS - cdist) / (SENSE_RADIUS - ACTIVE_RADIUS) * 0.5;
-      towardCursor = true;
-    }
-
-    signals.forEach(sig => {
-      const sdx   = sig.x - this.x;
-      const sdy   = sig.y - this.y;
-      const sdist = Math.hypot(sdx, sdy);
-      if (sdist < sig.radius * 0.75) {
-        targetActivation = Math.max(
-          targetActivation,
-          sig.intensity * (1 - sdist / (sig.radius * 0.75))
-        );
-      }
-    });
-
-    this.activation += (targetActivation - this.activation) * 0.06;
-
-    this.processes.forEach(proc => {
-      proc.wave += proc.waveSpeed;
-      if (towardCursor) {
-        const diff = Math.atan2(
-          Math.sin(cursorAngle - proc.angle),
-          Math.cos(cursorAngle - proc.angle)
-        );
-        const proximity = Math.abs(diff) < Math.PI / 2
-          ? 1 - Math.abs(diff) / (Math.PI / 2) : 0;
-        proc.targetLen = 14 + proximity * (this.activation * 32);
-      } else {
-        proc.targetLen = 14 + Math.sin(proc.wave * 0.5) * 3;
-      }
-      proc.length += (proc.targetLen - proc.length) * 0.07;
-    });
-  };
-
-  MicrogliaCell.prototype.draw = function (ctx) {
-    const a = this.activation;
-
-    // Colour: teal → yellow → red as activation increases
-    let r, g, b;
-    if (a < 0.5) {
-      const t = a / 0.5;
-      r = Math.round(t * 240);
-      g = Math.round(212 - t * 24);
-      b = Math.round(212 - t * 148);
-    } else {
-      const t = (a - 0.5) / 0.5;
-      r = Math.round(240 + t * 15);
-      g = Math.round(188 - t * 120);
-      b = Math.round(64  - t * 64);
-    }
-    const alpha = 0.55 + a * 0.35;
-
-    this.processes.forEach(proc => {
-      const wa  = proc.angle + Math.sin(proc.wave) * 0.12;
-      const ex  = this.x + Math.cos(wa) * proc.length;
-      const ey  = this.y + Math.sin(wa) * proc.length;
-      const bl  = proc.length * 0.4;
-
-      ctx.globalAlpha = alpha * 0.72;
-      ctx.lineWidth   = 1.5;
-      ctx.strokeStyle = `rgb(${r},${g},${b})`;
-      ctx.beginPath(); ctx.moveTo(this.x, this.y); ctx.lineTo(ex, ey); ctx.stroke();
-
-      ctx.globalAlpha = alpha * 0.32;
-      ctx.lineWidth   = 0.8;
-      for (const ba of [wa + 0.45, wa - 0.45]) {
-        ctx.beginPath();
-        ctx.moveTo(ex, ey);
-        ctx.lineTo(ex + Math.cos(ba) * bl, ey + Math.sin(ba) * bl);
-        ctx.stroke();
-      }
-    });
-
-    if (a > 0.05) {
-      const gr = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, 20 + a * 12);
-      gr.addColorStop(0, `rgba(${r},${g},${b},${0.28 * a})`);
-      gr.addColorStop(1, 'transparent');
-      ctx.globalAlpha = 1;
-      ctx.beginPath(); ctx.arc(this.x, this.y, 20 + a * 12, 0, Math.PI * 2);
-      ctx.fillStyle = gr; ctx.fill();
-    }
-
-    ctx.globalAlpha = alpha;
-    ctx.beginPath(); ctx.arc(this.x, this.y, 5 + a * 2, 0, Math.PI * 2);
-    ctx.fillStyle = `rgb(${r},${g},${b})`; ctx.fill();
-    ctx.globalAlpha = 1;
-  };
-
-  function Signal(x, y) {
-    this.x = x; this.y = y;
-    this.radius    = 0;
-    this.maxRadius = 210;
-    this.intensity = 1;
-    this.alive     = true;
-  }
-
-  Signal.prototype.update = function () {
-    this.radius   += 3.5;
-    this.intensity = Math.max(0, 1 - this.radius / this.maxRadius);
-    if (this.radius > this.maxRadius) this.alive = false;
-  };
-
-  Signal.prototype.draw = function (ctx) {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.strokeStyle = `rgba(255,107,107,${this.intensity * 0.55})`;
-    ctx.lineWidth   = 2;
-    ctx.stroke();
-  };
-
-  function init() {
-    resize();
-    cells = Array.from({ length: CELL_COUNT }, () => new MicrogliaCell());
-  }
-
-  function drawGrid() {
-    ctx.strokeStyle = 'rgba(107,79,168,0.055)';
-    ctx.lineWidth   = 0.5;
-    for (let x = 0; x < W; x += 42) {
-      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
-    }
-    for (let y = 0; y < H; y += 42) {
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
-    }
-  }
-
-  function loop() {
-    ctx.clearRect(0, 0, W, H);
-    drawGrid();
-    signals = signals.filter(s => s.alive);
-    signals.forEach(s => { s.update(); s.draw(ctx); });
-    cells.forEach(c => { c.update(mouse.x, mouse.y); c.draw(ctx); });
-    requestAnimationFrame(loop);
-  }
-
-  canvas.addEventListener('mousemove', e => {
-    const r   = canvas.getBoundingClientRect();
-    mouse.x   = (e.clientX - r.left) * (W / r.width);
-    mouse.y   = (e.clientY - r.top)  * (H / r.height);
-  });
-  canvas.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
-  canvas.addEventListener('click', e => {
-    const r = canvas.getBoundingClientRect();
-    signals.push(new Signal(
-      (e.clientX - r.left) * (W / r.width),
-      (e.clientY - r.top)  * (H / r.height)
-    ));
-  });
-  canvas.addEventListener('touchmove', e => {
-    e.preventDefault();
-    const r = canvas.getBoundingClientRect();
-    const t = e.touches[0];
-    mouse.x = (t.clientX - r.left) * (W / r.width);
-    mouse.y = (t.clientY - r.top)  * (H / r.height);
-  }, { passive: false });
-  canvas.addEventListener('touchend', () => { mouse.x = -9999; mouse.y = -9999; });
-
-  // Keyboard navigation: focus canvas and use arrow keys to move virtual cursor,
-  // Space/Enter to release an inflammatory signal
-  canvas.setAttribute('tabindex', '0');
-  canvas.addEventListener('keydown', e => {
-    const step = 20;
-    if (mouse.x < 0) { mouse.x = W / 2; mouse.y = H / 2; }
-    switch (e.key) {
-      case 'ArrowLeft':  mouse.x = Math.max(0, mouse.x - step);  e.preventDefault(); break;
-      case 'ArrowRight': mouse.x = Math.min(W, mouse.x + step);  e.preventDefault(); break;
-      case 'ArrowUp':    mouse.y = Math.max(0, mouse.y - step);  e.preventDefault(); break;
-      case 'ArrowDown':  mouse.y = Math.min(H, mouse.y + step);  e.preventDefault(); break;
-      case ' ':
-      case 'Enter':      signals.push(new Signal(mouse.x, mouse.y)); e.preventDefault(); break;
-    }
-  });
-  canvas.addEventListener('blur', () => { mouse.x = -9999; mouse.y = -9999; });
-
-  let microgliaResizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(microgliaResizeTimer);
-    microgliaResizeTimer = setTimeout(resize, 150);
-  });
-
-  init();
-  loop();
-})();
+const scheduleScene = () => 'requestIdleCallback' in window ? requestIdleCallback(loadScene, { timeout: 1800 }) : setTimeout(loadScene, 150);
+if (document.readyState === 'complete') scheduleScene(); else window.addEventListener('load', scheduleScene, { once: true });

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1017" />
+      <stop offset="1" stop-color="#13212b" />
+    </linearGradient>
+    <radialGradient id="glow-teal">
+      <stop offset="0" stop-color="#62d9c5" stop-opacity=".28" />
+      <stop offset="1" stop-color="#62d9c5" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow-purple">
+      <stop offset="0" stop-color="#b8a5fa" stop-opacity=".22" />
+      <stop offset="1" stop-color="#b8a5fa" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0" stop-color="#62d9c5" />
+      <stop offset="1" stop-color="#b8a5fa" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)" />
+  <circle cx="1060" cy="100" r="380" fill="url(#glow-teal)" />
+  <circle cx="1030" cy="535" r="390" fill="url(#glow-purple)" />
+  <g fill="none" stroke="#c2d2de" stroke-opacity=".16">
+    <circle cx="970" cy="315" r="110" />
+    <circle cx="970" cy="315" r="170" />
+    <circle cx="970" cy="315" r="230" />
+  </g>
+  <g stroke="url(#accent)" stroke-opacity=".82" stroke-width="3" fill="none">
+    <path d="M814 320 L904 238 L1020 220 L1107 300 L1078 398 L973 435 L875 401 Z" />
+    <path d="M904 238 L973 435 M814 320 L1020 220 M1107 300 L875 401" stroke-opacity=".36" />
+  </g>
+  <g fill="#0b1017" stroke="url(#accent)" stroke-width="4">
+    <circle cx="814" cy="320" r="9" />
+    <circle cx="904" cy="238" r="9" />
+    <circle cx="1020" cy="220" r="9" />
+    <circle cx="1107" cy="300" r="9" />
+    <circle cx="1078" cy="398" r="9" />
+    <circle cx="973" cy="435" r="9" />
+    <circle cx="875" cy="401" r="9" />
+  </g>
+  <text x="82" y="93" fill="#62d9c5" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="4">NEUROIMMUNOLOGY  ×  SOFTWARE</text>
+  <text x="78" y="255" fill="#f2f3f4" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="-2">Meghamsh Teja</text>
+  <text x="78" y="344" fill="#f2f3f4" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="-2">Konda</text>
+  <rect x="82" y="382" width="108" height="5" rx="2.5" fill="url(#accent)" />
+  <text x="82" y="445" fill="#c1c9d1" font-family="Arial, Helvetica, sans-serif" font-size="28">PhD researcher in neuroimmunology</text>
+  <text x="82" y="491" fill="#a8b3c0" font-family="Arial, Helvetica, sans-serif" font-size="24">Trinity College Dublin</text>
+  <text x="82" y="574" fill="#71808f" font-family="Arial, Helvetica, sans-serif" font-size="17" letter-spacing="1">RESEARCH  ·  METHODS  ·  SOFTWARE PROJECTS</text>
+</svg>
